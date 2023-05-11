@@ -1,3 +1,38 @@
 .filtre {
     background-color: aquamarine;
+    padding: 10px;
+    border-radius: 8px;
+    width: 130px;
+}
+
+#appliquer_filtre {
+    text-align: center;
+}
+
+#titre_filtre {
+    text-align: center;
+}
+
+#titre_categories {
+    text-align: center;
+}
+
+.categorie {
+    background-color: aquamarine;
+    padding: 10px;
+    border-radius: 8px;
+    width: 130px;
+}
+
+.produits {
+    background-color: aquamarine;
+    padding: 10px;
+    border-radius: 8px;
+    width: 1000px;
+    height: 390px;
+}
+
+.filtre_categorie, .produits {
+    display: inline-block;
+
 }
