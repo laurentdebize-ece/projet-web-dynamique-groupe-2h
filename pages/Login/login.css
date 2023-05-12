@@ -1,0 +1,78 @@
+body{
+    background-color: #f8f1f1;
+}
+
+.main_container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+}
+.bloc_principal{
+    display: flex;
+    width: 30%;
+    height: 25%;
+    background-color: #960018;
+    border-radius: 10px;
+    margin-top: 60px;
+    align-items:center ;
+    justify-content: center;
+}
+
+.formulaire_container{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: 25%;
+    align-items: center;
+    margin-top: 10px;
+}
+
+input[type="text"], input[type="password"]{
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 15px;
+    margin-top: 15px;
+    border:black solid 2px;
+    padding-left: 2px;
+
+}
+
+.titre_gifty{
+    color: goldenrod;
+    font-size: 40px;
+    font-family: 'DIN Alternate';
+}
+
+.titre_creer_compte{
+    margin-top: 20px;
+    color: black;
+    font-size: 30px;
+    font-family: 'DIN Alternate';
+
+}
+
+.titre_red_effet{
+    margin-top: 20px;
+    color:red;
+    font-size: 30px;
+    font-family: 'DIN Alternate';
+}
+
+.titre_bas{
+    font-family: 'DIN Alternate';
+    margin-top: 40px;
+    color: rgb(50, 48, 48);
+    font-size: 15px;
+    text-decoration: underline;
+}
+
+
+@font-face{
+    font-family: 'DIN Alternate';
+    src: url('DINAlternate-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
