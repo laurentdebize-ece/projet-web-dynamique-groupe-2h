@@ -18,13 +18,16 @@
     <div class="titre_creer_compte">
         Creer un <span class="titre_red_effet">compte</span>
     </div>
-    <form class="formulaire_container">
+    <form class="formulaire_container" action="login_traitement.php" method="post">
         <div>
             <label for="identifiant"></label>
             <input type="text" name="identifiant" placeholder="Identifiant">
         </div>
         <div><label for="mdp"></label>
             <input type="password" name="mdp" placeholder="Mot de passe">
+        </div>
+        <div>
+            <input type="submit" placeholder="Connecter">
         </div>
     </form>
     <div class="titre_bas">
