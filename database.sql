@@ -24,7 +24,7 @@ CREATE TABLE Users
     id       int PRIMARY KEY AUTO_INCREMENT,
     nom      varchar(20) NOT NULL,
     prenom   varchar(20) NOT NULL,
-    password varchar(32) NOT NULL,
+    mot_de_passe varchar(32) NOT NULL,
     email    varchar(50) NOT NULL,
     phone    varchar(10) NOT NULL,
     statut   int         NOT NULL,

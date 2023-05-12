@@ -9,9 +9,9 @@
 <body>
     <?php
 
-    include("connexion_base.php");
+    include("../../connexion_base.php");
 
-    $reponse = $bdd->query("SELECT id, password FROM Users");
+    $reponse = $bdd->query("SELECT id, mot_de_passe FROM Users");
 
     while ($donnees = $reponse->fetch()) { 
         if($_POST['identifiant']===$donnees['id'] && $_POST['mdp']===$donnees['password']){
