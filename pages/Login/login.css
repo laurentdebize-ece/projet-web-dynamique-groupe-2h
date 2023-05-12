@@ -18,6 +18,12 @@ body{
     margin-top: 60px;
     align-items:center ;
     justify-content: center;
+    transition: all 0.5s;
+}   
+
+.bloc_principal:hover{
+    width: 35%;
+    height: 30%;
 }
 
 .formulaire_container{
