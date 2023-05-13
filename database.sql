@@ -38,7 +38,7 @@ CREATE TABLE Carte
     partenaire  int,
     prix        int,
     nomCarte    varchar(50),
-    description varchar(100)
+    description_carte varchar(100)
 );
 
 CREATE TABLE Achat
