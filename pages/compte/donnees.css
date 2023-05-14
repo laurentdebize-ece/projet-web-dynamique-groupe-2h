@@ -1,26 +1,26 @@
-input[type="text"], input[type="email"]{
-    width: 40vh;
-    height: 6vh;
-    border-radius: 5px;
-    font-size: 15px;
-    margin-top: 15px;
-    border:white solid 1px;
-    padding-left: 2px;
-}
-
-.titre_donnees_container{
+.one_grid{
     font-family: 'DIN Alternate';
     color:black;
     font-size: 30px;
 }
 
-.donnees_container{
+.donnees_grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    width: 60%;
+    height: 50%;
+    margin-left: 40px;
+    margin-bottom: 30px;
+}
+
+.info_container{
     display: flex;
-    flex-direction: column;
-    width: 50%;
-    height: 70%;
-    border: chocolate solid 2px;
-    margin-left:10px;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row;
+    background-color: white;
+    border-radius: 5px;
+    color: black;
+    font-family: 'DIN Alternate';
+    width: 90%;
+    height: 60%;
 }

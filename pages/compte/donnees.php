@@ -7,24 +7,36 @@
     <link rel="stylesheet" href="donnees.css">
 </head>
 <body>
-    <div class="donnees_container">
-        <div class="titre_donnees_container">
-            <p>Donnees personnels</p>
-        </div>  
-        <form>
-            <div>
-                <label for="nom"></label>
-                <input type="text" name="nom" placeholder="nom">
+    <div class="donnees_grid">
+        <div class="one_grid">
+            Donnees personnels
+        </div>
+        <div class="two_grid">
+            <div class="info_container">
+                Nom
             </div>
-            <div>
-                <label for="prenom"></label>
-                <input type="text" name="prenom" placeholder="prenom">
+        </div>
+        <div class="three_grid">
+            <div class="info_container">
+                Prenom
             </div>
-            <div>
-                <label for="mail"></label>
-                <input type="email" name="mail" placeholder="email">
+        </div>
+        <div class="four_grid">
+            <div class="info_container">
+                Adresse
             </div>
-        </form>
+        </div>
+        <div class="five_grid">
+            <div class="info_container">
+                Tel
+            </div>      
+        </div>
+        <div class="six_grid">
+            <div class="info_container">
+                Email
+            </div>
+        </div>
+       
     </div>    
 </body>
 </html>
