@@ -22,6 +22,23 @@
             $verification++;
 
             if(htmlspecialchars($_POST['identifiant'])===$donnees['email'] && htmlspecialchars($_POST['mdp'])===$donnees['mot_de_passe']){
+                session_start(); 
+                $_SESSION['identifiant'] = $_POST['identifiant'];
+                $_SESSION['mdp'] = $_POST['mdp'];
+
+                //fonction pour retrouver le nom et le prenom
+
+                $reponse2 = $bdd->query("SELECT * FROM Users");
+
+                while ($donnees = $reponse2->fetch()) {
+                    if($_SESSION['identifiant']===$donnees['email'] && $_SESSION['mdp']===$donnees['mot_de_passe'] ){
+                        $_SESSION['prenom']=$donnees['prenom'];
+                        $_SESSION['nom']=$donnees['nom'];
+                        $_SESSION['tel']=$donnees['phone'];
+                        break;
+                    }
+                }
+                 //Acces à la page suivante
                 echo "<script>window.location.assign('http://localhost:8888/projet-web-dynamique-groupe-2h/pages/accueil.php');</script>";
             }
         }

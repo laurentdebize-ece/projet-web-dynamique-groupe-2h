@@ -1,3 +1,6 @@
+<?php 
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,29 +14,34 @@
         <div class="one_grid">
             Donnees personnels
         </div>
-        <div class="two_grid">
+        <div>
+            <p class="user_info">Nom</p>
             <div class="info_container">
-                Nom
+                <?php echo $_SESSION['nom']?>
             </div>
         </div>
-        <div class="three_grid">
+        <div>
+            <p class="user_info">Prenom</p>
             <div class="info_container">
-                Prenom
+               <?php echo $_SESSION['prenom']?>
             </div>
         </div>
-        <div class="four_grid">
+        <div>
+        <p class="user_info">Mot de passe</p>
             <div class="info_container">
-                Adresse
+                XXXXXXX 
             </div>
         </div>
-        <div class="five_grid">
+        <div>
+            <p class="user_info">Tel.</p>
             <div class="info_container">
-                Tel
+               <?php echo $_SESSION['tel']?>
             </div>      
         </div>
-        <div class="six_grid">
+        <div>
+            <p class="user_info">Email/Identifiant</p>
             <div class="info_container">
-                Email
+                <?php echo $_SESSION['identifiant']?>
             </div>
         </div>
        

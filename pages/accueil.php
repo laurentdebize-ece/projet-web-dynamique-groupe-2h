@@ -7,6 +7,9 @@
     <title>GIFTY - Accueil</title>
     <link rel="stylesheet" href="main/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>    
+    <script src="main/acces.js"></script>
+
 </head>
 <body>
 <?php include('main/menu.php') ?>
