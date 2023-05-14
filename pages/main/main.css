@@ -7,11 +7,7 @@
     font-family: "DIN Alternate", sans-serif;
 }
 
-body {
-    background-color: #DFDFDF;
-}
-
-header nav {
+.navbar {
     background-color: #960018;
     padding: 25px 10px;
     display: flex;
@@ -26,7 +22,7 @@ header nav {
     padding: 0 20px;
 }
 
-header nav a {
+.navbar a {
     color: white;
 }
 
@@ -116,5 +112,20 @@ header nav a {
 
 .search-form:hover button {
     background-color: black;
+    color: white;
+}
+
+footer {
+    background-color: black;
+}
+
+.footer-elements {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.footer-elements li a {
     color: white;
 }

@@ -7,13 +7,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="catalogue.css">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="main/main.css">
 </head>
 <body>
-
-ici faut mettre le header
-
-
+<?php include('menu.php') ?>
 <h1 class="produits_phares">
     NOS PRODUITS PHARES
 </h1>
