@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="catalogue.css">
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
 
@@ -75,7 +76,5 @@ ici faut mettre le header
 
 </body>
 
-<footer>
-    la faut mettre le footer
-</footer>
+<?php include('footer.php') ?>
 </html>
