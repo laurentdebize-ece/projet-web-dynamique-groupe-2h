@@ -2,10 +2,10 @@
     <nav class="navbar">
         <a href="#" class="logo">Gifty</a>
         <ul class="nav-links">
-            <li><a href="" class="active">Accueil</a></li>
-            <li><a href="">J'ai une OmnesBox</a></li>
-            <li><a href="">Partenaires</a></li>
-            <li><a href="">Catalogue</a></li>
+            <li><a href="accueil.php" class="active">Accueil</a></li>
+            <li><a href="omnesbox.php">J'ai une OmnesBox</a></li>
+            <li><a href="partenaires.php">Partenaires</a></li>
+            <li><a href="catalogue.php">Catalogue</a></li>
         </ul>
 
         <ul class="nav-icons">
