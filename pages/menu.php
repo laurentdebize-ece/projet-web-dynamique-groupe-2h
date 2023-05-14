@@ -7,10 +7,18 @@
             <li><a href="">Partenaires</a></li>
             <li><a href="">Catalogue</a></li>
         </ul>
+
         <ul class="nav-icons">
-            <li><img src="../assets/search.svg" alt="Rechercher"></li>
-            <li><img src="../assets/account.svg" alt="Compte"></li>
-            <li><img src="../assets/cart.svg" alt="Panier"></li>
+            <li>
+                <form action="search.php" method="get" class="search-form">
+                    <input type="search" placeholder="Rechercher" name="query">
+                    <button type="submit">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </form>
+            </li>
+            <li><img src="../assets/account.svg" alt="Mon compte"></li>
+            <li><img src="../assets/cart.svg" alt="Mon panier"></li>
         </ul>
     </nav>
 </header>
