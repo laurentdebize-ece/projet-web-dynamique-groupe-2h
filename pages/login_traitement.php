@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="../stylesheet/login.css">
     <title>Document</title>
 </head>
 <body>
@@ -13,7 +13,7 @@
     $verification = 0;
     if(isset($_POST['identifiant']) && isset($_POST['mdp'])){
 
-        include("../../connexion_base.php");
+        include("connexion_base.php");
 
         $reponse = $bdd->prepare("SELECT email, mot_de_passe FROM Users WHERE email= ? AND mot_de_passe= ?");
         $reponse->execute(array($_POST['identifiant'], $_POST['mdp']));

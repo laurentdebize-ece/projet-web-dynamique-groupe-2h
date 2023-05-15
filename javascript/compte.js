@@ -5,7 +5,7 @@ $(document).ready(function (){
         $('#cb').css('border', 'white 2px solid');
         $('#settings').css('border', 'white 2px solid');
         $('#panier').css('border', 'white 2px solid');
-        $('.informarions_container').load('/projet-web-dynamique-groupe-2h/pages/compte/donnees.php');
+        $('.informarions_container').load('/projet-web-dynamique-groupe-2h/pages/donnees.php');
     });
 
     $("#cb").click(function(){
@@ -13,7 +13,7 @@ $(document).ready(function (){
         $('#donnees_perso').css('border', 'white 2px solid');
         $('#settings').css('border', 'white 2px solid');
         $('#panier').css('border', 'white 2px solid');
-        $('.informarions_container').load('/projet-web-dynamique-groupe-2h/pages/compte/cb.php');
+        $('.informarions_container').load('/projet-web-dynamique-groupe-2h/pages/cb.php');
     });
 
     $("#panier").click(function(){
@@ -21,7 +21,7 @@ $(document).ready(function (){
         $('#donnees_perso').css('border', 'white 2px solid');
         $('#cb').css('border', 'white 2px solid');
         $('#settings').css('border', 'white 2px solid');
-        $('.informarions_container').load('/projet-web-dynamique-groupe-2h/pages/compte/panier_compte.php');
+        $('.informarions_container').load('/projet-web-dynamique-groupe-2h/pages/panier_compte.php');
     });
 
     $("#settings").click(function(){
@@ -29,7 +29,7 @@ $(document).ready(function (){
         $('#cb').css('border', 'white 2px solid');
         $('#panier').css('border', 'white 2px solid');
         $('#donnees_perso').css('border', 'white 2px solid');
-        $('.informarions_container').load('/projet-web-dynamique-groupe-2h/pages/compte/settings.php');
+        $('.informarions_container').load('/projet-web-dynamique-groupe-2h/pages/settings.php');
     });
 
 });
