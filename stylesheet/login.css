@@ -57,6 +57,7 @@ input[type="submit"]{
     padding-left: 2px;
     font-family: 'DIN Alternate';
     background-color: #960018;
+    margin-left: 10px;
 }
 
 .titre_gifty{

@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="catalogue.css">
-    <link rel="stylesheet" href="main/main.css">
+    <link rel="stylesheet" href="../stylesheet/catalogue.css">
+    <link rel="stylesheet" href="../stylesheet/main.css">
 </head>
 <body>
 <?php include('menu.php') ?>
@@ -65,7 +65,7 @@
             <div id="numero"></div>
             <div id="suivant">
                 suivant
-                <button id="boutton_suivant"><img src="images/arrow.svg" alt="logohomenav"></a> </button>
+                <button id="boutton_suivant"><img src="images/arrow.svg" alt="fleche"></a> </button>
             </div>
         </div>
     </div>
