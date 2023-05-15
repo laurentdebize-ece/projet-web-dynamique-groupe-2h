@@ -65,7 +65,7 @@
             <div id="numero"></div>
             <div id="suivant">
                 suivant
-                <button id="boutton_suivant"><img src="images/arrow.svg" alt="logohomenav"></a> </button>
+                <button id="boutton_suivant"><img src="images/arrow.svg" alt="fleche"></a> </button>
             </div>
         </div>
     </div>
