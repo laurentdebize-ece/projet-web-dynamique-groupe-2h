@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="catalogue.css">
+    <?php include 'menu.php'; ?>
 </head>
 <body>
 
-ici faut mettre le header
 
 
 <h1 class="produits_phares">
@@ -67,7 +67,7 @@ ici faut mettre le header
             <div id="numero"></div>
             <div id="suivant">
                 suivant
-                <button id="boutton_suivant"><img src="images/arrow.svg" alt="logohomenav"></a> </button>
+                <button id="boutton_suivant"><img src="images/arrow.svg" alt="fleche"></a> </button>
             </div>
         </div>
     </div>
@@ -76,6 +76,6 @@ ici faut mettre le header
 </body>
 
 <footer>
-    la faut mettre le footer
+    <?php include 'footer.php'; ?>
 </footer>
 </html>
