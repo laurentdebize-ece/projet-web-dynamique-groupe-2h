@@ -35,7 +35,7 @@
         <div>
             <p class="user_info">Tel.</p>
             <div class="info_container">
-               <?php echo $_SESSION['tel']?>
+               <?php echo "0".$_SESSION['tel'].""?>
             </div>      
         </div>
         <div>
