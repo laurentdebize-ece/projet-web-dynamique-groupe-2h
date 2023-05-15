@@ -1,0 +1,26 @@
+.one_grid{
+    font-family: 'DIN Alternate';
+    color:black;
+    font-size: 30px;
+}
+
+.donnees_grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    width: 60%;
+    height: 50%;
+    margin-left: 40px;
+    margin-bottom: 30px;
+}
+
+.info_container{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    border-radius: 5px;
+    color: black;
+    font-family: 'DIN Alternate';
+    width: 90%;
+    height: 60%;
+}
