@@ -35,6 +35,7 @@
                         $_SESSION['prenom']=$donnees['prenom'];
                         $_SESSION['nom']=$donnees['nom'];
                         $_SESSION['tel']=$donnees['phone'];
+                        $_SESSION['statut']=$donnees['statut'];
                         break;
                     }
                 }
