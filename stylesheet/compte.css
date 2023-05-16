@@ -57,7 +57,7 @@ body{
     transition: all 0.5s;
     margin-bottom: 5px;
     margin-left: 20px;
-    background-image: url(/projet-web-dynamique-groupe-2h/pages/compte/images_menu/perso-data.svg);
+    background-image: url(/projet-web-dynamique-groupe-2h/assets/perso-data.svg);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center; 
@@ -72,7 +72,7 @@ body{
     transition: all 0.5s;
     margin-bottom: 5px;
     margin-left: 20px;
-    background-image: url(/projet-web-dynamique-groupe-2h/pages/compte/images_menu/panier.svg);
+    background-image: url(/projet-web-dynamique-groupe-2h/assets/panier.svg);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center; 
@@ -87,7 +87,7 @@ body{
     transition: all 0.5s;
     margin-bottom: 5px;
     margin-left: 20px;
-    background-image: url(/projet-web-dynamique-groupe-2h/pages/compte/images_menu/card.svg);
+    background-image: url(/projet-web-dynamique-groupe-2h/assets/card.svg);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center; 
@@ -102,7 +102,7 @@ body{
     transition: all 0.5s;
     margin-bottom: 5px;
     margin-left: 20px;
-    background-image: url(/projet-web-dynamique-groupe-2h/pages/compte/images_menu/settings.svg);
+    background-image: url(/projet-web-dynamique-groupe-2h/assets/settings.svg);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center; 

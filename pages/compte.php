@@ -12,7 +12,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../stylesheet/main.css">
-    <script src="compte.js"></script>
+    <script src="../javascript/compte.js"></script>
     <title>Gifty</title>
 </head>
 <body>
