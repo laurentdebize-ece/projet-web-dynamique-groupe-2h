@@ -1,5 +1,5 @@
 $(document).ready(function() {
     $("#compte_img").click(function() {
-      window.location.href = "../pages/compte.php";
+      window.location.href = "compte.php";
     });
   });
