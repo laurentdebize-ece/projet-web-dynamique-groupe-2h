@@ -64,12 +64,8 @@
     justify-content: space-around;
 }
 
-
-
-
-
-footer {
-    background-color: black;
-    height: 150px;
-    color: white;
+@media screen and (max-width: 500px) {
+    #premiere_ligne, #deuxieme_ligne {
+        flex-direction: column;
+    }
 }
