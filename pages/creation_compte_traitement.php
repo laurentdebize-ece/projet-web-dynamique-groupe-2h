@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="creation_compte.css">
+    <link rel="stylesheet" href="../stylesheet/creation_compte.css">
     <title>Gifty</title>
 </head>
 <body>
@@ -19,7 +19,7 @@
         $email = htmlspecialchars($_POST['mail']);
 
 
-        include("../../connexion_base.php");
+        include("connexion_base.php");
 
         $reponse = $bdd->prepare("INSERT INTO Users(nom, prenom, mot_de_passe, email, phone, statut, domaine)
         VALUES (?, ?, ?, ?, ?, '3', null)");
