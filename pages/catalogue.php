@@ -3,14 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>catalogue</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="catalogue.css">
     <link rel="stylesheet" href="main/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-<?php include('menu.php') ?>
+<?php include('main/menu.php') ?>
 <h1 class="produits_phares">
     NOS PRODUITS PHARES
 </h1>
@@ -20,7 +18,7 @@
 </div>
 
 
-<div id="catalogue" class="container-fluid">
+<div id="catalogue">
     <div class="filtre_categorie">
         <div class="filtre">
             <h3 id="titre_filtre">
@@ -73,5 +71,5 @@
 
 </body>
 
-<?php include('footer.php') ?>
+<?php include('main/footer.php') ?>
 </html>
