@@ -134,9 +134,10 @@ input[type="submit"]{
 
 .settings-main-container{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     width: 95%;
     height: 90%;
+    border: solid red 3px;
 }
 
 .settings-second-container{
@@ -144,6 +145,7 @@ input[type="submit"]{
     flex-direction: column;
     width: 50%;
     height: 95%;
+    border: green solid 2px;
 }
 
 .partenaire-container{
@@ -169,6 +171,11 @@ input[type="submit"]{
     color: black;
     font-size: 15px;
 }
-#descr{
-    box-sizing: 20px;
+
+.settings-second-bis-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 95%;
+    border: blue solid 2px;
 }
