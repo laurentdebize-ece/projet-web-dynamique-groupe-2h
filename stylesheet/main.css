@@ -9,10 +9,11 @@
 
 .navbar {
     background-color: #960018;
-    padding: 25px 10px;
+    padding: 25px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .logo {
@@ -48,7 +49,7 @@
 }
 
 .nav-links li {
-    padding: 0 20px;
+    padding: 0 40px;
     font-size: 1.1em;
 }
 
@@ -58,7 +59,7 @@
 }
 
 .nav-icons li {
-    padding: 0 15px;
+    padding: 0 20px;
 }
 
 .nav-icons li > img {
@@ -72,10 +73,10 @@
     position: relative;
     border: 5px solid white;
     border-radius: 25px;
-    transition: all 0.5s;
+    transition: all 0.5s ease;
 }
 
-.search-form input {
+.search-input {
     display: none;
     left: 0;
     top: 0;
@@ -90,32 +91,117 @@
     font-size: 1em;
 }
 
-.search-form button {
+.search-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     right: 0;
     background-color: white;
     border: none;
-    border-radius: 25px;
+    border-radius: 20px;
     color: black;
     width: 40px;
     font-size: 1.2em;
     height: 100%;
-    transition: all 0.5s;
+    transition: all 0.5s ease;
 }
 
-.search-form:hover {
-    width: 300px;
+.login-popup {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    padding: 15px 20px;
+    box-shadow: 0 3px 5px #171717;
+    right: 1%;
+    top: 80%;
+    position: absolute;
+    border-radius: 5px;
 }
 
-.search-form:hover input {
+.login-popup::before {
+    content: "";
+    position: absolute;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid white;
+    top: 0;
+    transform: translate(0, -100%);
+    left: 20%;
+    width: 0;
+    height: 0;
+}
+
+.login-popup a {
+    color: black;
+    padding: 5px 40px 5px 0;
+    margin: 5px 0;
+    position: relative;
+}
+
+.arrow {
+    top: 50%;
+    position: absolute;
+    background-color: #171717;
+    width: 15px;
+    height: 2px;
+    display: inline-block;
+    margin: 0 20px 0 20px;
+    transition: all 0.3s ease;
+}
+
+.login-popup a:hover .arrow{
+    transform: translateX(5px);
+}
+
+.arrow::after, .arrow::before {
+    position: absolute;
+    background-color: #171717;
+    content: '';
     display: block;
+    right: -2px;
+    height: 2px;
+    width: 70%;
 }
 
-.search-form:hover button {
-    background-color: black;
+.arrow::after {
+    top: 3px;
+    transform: rotate(-45deg);
+}
+
+.arrow::before {
+    top: -3px;
+    transform: rotate(45deg);
+}
+
+.separator {
+    background-color: #B9B9B9;
+    height: 1px;
+    width: 100%;
+}
+
+/*
+.login-popup a:last-child::after {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    content: "";
+    width: 6px;
+    height: 6px;
+    display: block;
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+    transform: rotate(45deg) translate(-50%, 0);
+}
+
+.login-popup a:first-child {
     color: white;
+    background-color: black;
+    border-radius: 5px;
 }
-
+*/
 footer {
     background-color: black;
 }
@@ -131,6 +217,8 @@ footer {
     color: white;
 }
 
+
+
 @media screen and (max-width: 900px) {
     .nav-links {
         display: none;
@@ -141,6 +229,10 @@ footer {
     }
 
     .footer-elements {
-        flex-direction: column;
+        flex-direction: column;;
+    }
+
+    .footer-elements li {
+        padding: 10px;
     }
 }

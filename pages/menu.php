@@ -10,15 +10,29 @@
 
         <ul class="nav-icons">
             <li>
-                <form action="search.php" method="get" class="search-form">
-                    <input type="search" placeholder="Rechercher" name="query">
-                    <button type="submit">
+                <form action="" method="get" class="search-form">
+                    <input type="search" placeholder="Rechercher" name="query" class="search-input">
+                    <div class="search-button">
                         <i class="fa fa-search"></i>
-                    </button>
+                    </div>
+                    <div class="search-button">
+                        <i class="fa fa-close"></i>
+                    </div>
                 </form>
             </li>
-            <li><img src="../assets/account.svg" alt="Mon compte" id="compte_img"></li>
+            <li id="account-button"><img src="../assets/account.svg" alt="Mon compte"></li>
             <li><img src="../assets/cart.svg" alt="Mon panier"></li>
         </ul>
+        <div class="login-popup">
+            <a href="login.php">
+                Connexion
+                <div class="arrow"></div>
+            </a>
+            <div class="separator"></div>
+            <a href="creation_de_compte.php">
+                Inscription
+                <div class="arrow"></div>
+            </a>
+        </div>
     </nav>
 </header>

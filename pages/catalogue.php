@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="../stylesheet/catalogue.css">
     <link rel="stylesheet" href="../stylesheet/main.css">
 </head>
@@ -20,7 +21,7 @@
 </div>
 
 
-<div id="catalogue" class="container-fluid">
+<div id="catalogue">
     <div class="filtre_categorie">
         <div class="filtre">
             <h3 id="titre_filtre">
@@ -60,12 +61,11 @@
         </div>
         <div id="prev_next">
             <div id="precedent">
-                precédent
+                <button class="boutton_suivant"><img src="../assets/arrow.svg" alt="flèche" style="width: 32px;"></a> précédent</button>
             </div>
             <div id="numero"></div>
             <div id="suivant">
-                suivant
-                <button id="boutton_suivant"><img src="images/arrow.svg" alt="fleche"></a> </button>
+                <button class="boutton_suivant">suivant <img src="../assets/arrow.svg" alt="flèche" style="width: 32px; transform: scaleX(-1);"></a></button>
             </div>
         </div>
     </div>
