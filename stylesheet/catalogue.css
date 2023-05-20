@@ -106,6 +106,7 @@ body {
     position: relative;
     overflow: hidden;
     box-shadow: 0 2px 5px black;
+    margin: 5px auto;
 }
 
 .produit_unitaire img {
@@ -115,7 +116,7 @@ body {
 
 .description {
     position: absolute;
-    bottom: -100%;
+    bottom: -110%;
     left: 0;
     width: 100%;
     height: 100%;
@@ -142,9 +143,11 @@ body {
 
 .bouton_en_savoir_plus {
     margin-inline: auto;
+    padding: 10px 15px;
     color: white;
     background-color: rgba(255, 255, 255, 0);
-    width: 30%;
+    width: 98%;
+    border: 1px solid white;
     transition: transform 0.3s;
 }
 
@@ -169,6 +172,7 @@ body {
         margin: auto;
         height: 70%;
         width: 70%;
+        margin: 5px auto;
     }
     .description {
         font-size: 100%;

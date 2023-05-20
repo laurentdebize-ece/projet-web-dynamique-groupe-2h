@@ -14,12 +14,23 @@
 
 
 
+
+
+
 <?php
 if (!empty($_POST['prix_croissant'])) {
 }
 
 if (!empty($_POST['prix_decroissant'])) {
+}
+
+if (!empty($_POST['recent'])) {
+}
+
+if (!empty($_POST['ancien'])) {
 } ?>
+
+
 
 
 
