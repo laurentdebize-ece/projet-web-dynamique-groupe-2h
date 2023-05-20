@@ -23,22 +23,14 @@
         </div>
         <div class="main_informations_container">
             <div class="barre_container">
-                <div>
-                    <label for="donnees_perso"></label>
-                    <input type="button" id="donnees_perso" class="boutton1">
-                </div>
-                <div>
-                    <label for="panier"></label>
-                    <input type="button" id="panier" class="boutton2" place>
-                </div>
-                <div>
-                    <label for="cb"></label>
-                    <input type="button" id="cb" class="boutton3">
-                </div>
-                <div>
-                    <label for="settings"></label>
-                    <input type="button" id="settings" class="boutton4">
-                </div>
+                <label for="donnees_perso"></label>
+                <input type="button" id="donnees_perso" class="boutton1">
+                <label for="panier"></label>
+                <input type="button" id="panier" class="boutton2" place>
+                <label for="cb"></label>
+                <input type="button" id="cb" class="boutton3">
+                <label for="settings"></label>
+                <input type="button" id="settings" class="boutton4">
             </div>
             <div class="informarions_container">
             </div>

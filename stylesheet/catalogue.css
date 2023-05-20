@@ -1,16 +1,22 @@
+body {
+    background-color: #F8F1F1;
+}
+
 #catalogue {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .filtre_categorie {
     display: flex;
     justify-content: space-around;
     flex-direction: column;
+    height: 565px;
 }
 
 .filtre {
-    background-color: aquamarine;
+    background-color: white;
+    border: 3px solid #960018;
     padding: 15px;
     border-radius: 8px;
     width: 200px;
@@ -29,7 +35,8 @@
 }
 
 .categorie {
-    background-color: aquamarine;
+    background-color: white;
+    border: 3px solid #960018;
     padding: 15px;
     border-radius: 8px;
     width: 200px;
@@ -39,7 +46,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    background-color: aquamarine;
+    background-color: #F8F1F1;
     padding: 10px;
     border-radius: 8px;
     width: 1200px;
@@ -52,24 +59,48 @@
 }
 
 .produit_1, .produit_2, .produit_3 {
-    background-color: black;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 7px;
     height: 200px;
     width: 200px;
+    transition: transform 0.3s;
 }
 
+.produit_1:hover, .produit_2:hover, .produit_3:hover {
+    transform: scale(1.2);
+}
 
 #prev_next {
-    background-color: #2b70ee;
+    background-color: #F8F1F1;
     display: flex;
     justify-content: space-around;
 }
 
+@media screen and (max-width: 500px) {
+    #premiere_ligne, #deuxieme_ligne {
+        flex-direction: column;
+    }
+}
 
+#suivant {
+    border-radius: 25px;
+    border: 10px solid #F8F1F1;
+    background-color: #F8F1F1;
+    transition: transform 0.3s;
+}
 
+#suivant:hover {
+    transform: scale(1.1);
+}
 
+#precedent {
+    border-radius: 25px;
+    border: 10px solid #F8F1F1;
+    background-color: #F8F1F1;
+    transition: transform 0.3s;
+}
 
-footer {
-    background-color: black;
-    height: 150px;
-    color: white;
+#precedent:hover {
+    transform: scale(1.1);
 }
