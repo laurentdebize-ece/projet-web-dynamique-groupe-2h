@@ -38,7 +38,9 @@ CREATE TABLE Carte
     partenaire  int,
     prix        int,
     nomCarte    varchar(50),
-    description_carte varchar(100)
+    description_carte varchar(100),
+    img  varchar(50),
+    mots_clefs  varchar(100)
 );
 
 CREATE TABLE Achat
