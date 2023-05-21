@@ -35,6 +35,7 @@ CREATE TABLE Users
 CREATE TABLE Carte
 (
     id          int PRIMARY KEY AUTO_INCREMENT,
+    date_ajout  date,
     partenaire  int,
     prix        int,
     nomCarte    varchar(50),
