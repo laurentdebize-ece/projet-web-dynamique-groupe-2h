@@ -68,6 +68,7 @@
                             $_SESSION['nom'] = $donnees['nom'];
                             $_SESSION['tel'] = $donnees['phone'];
                             $_SESSION['statut'] = $donnees['statut'];
+                            $_SESSION['id'] = $donnees['id'];
                             break;
                         }
                     }
