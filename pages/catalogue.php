@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <title>catalogue</title>
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="../stylesheet/catalogue.css">
     <link rel="stylesheet" href="../stylesheet/main.css">
 </head>
+
 <body>
 
 <?php include('menu.php') ?>
@@ -80,172 +82,159 @@ if ($compteur_de_filtres == 1) {
     nos produits phares
 </h1>
 
-<div class="carroussel">
-    Guillaume c'est ici faut que tu mette ton carrousel
-</div>
+    <div class="carroussel">
+        <section class="MD">
+            <div class="slider">
+                <div class="degrade"></div>
+                <div class="degrade2"></div>
+                <div class="slide-track">
+                    <div class="slide">
+                        <img src="../assets/1.jpg" alt="Carte football">
+                    </div>
+                    <div class="slide">
+                        <img src="../assets/3.jpg" alt="Carte football">
+                    </div>
+                    <div class="slide">
+                        <img src="../assets/1.jpg" alt="Carte football">
+                    </div>
+                    <div class="slide">
+                        <img src="../assets/2.jpg" alt="Carte football">
+                    </div>
+                    <div class="slide">
+                        <img src="../assets/2.jpg" alt="Carte football">
+                    </div>
 
-<div id="catalogue">
-    <div class="filtre_categorie">
-        <div class="filtre">
-            <form method="post" action="" class="form">
-                <h3 id="titre_filtre">
-                    FILTRES
+
+                    <div class="slide">
+                        <img src="../assets/1.jpg" alt="Carte football">
+                    </div>
+                    <div class="slide">
+                        <img src="../assets/3.jpg" alt="Carte football">
+                    </div>
+                    <div class="slide">
+                        <img src="../assets/1.jpg" alt="Carte football">
+                    </div>
+                    <div class="slide">
+                        <img src="../assets/2.jpg" alt="Carte football">
+                    </div>
+                    <div class="slide">
+                        <img src="../assets/2.jpg" alt="Carte football">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <h1 class="produits_phares">
+        CATALOGUE ...
+    </h1>
+
+    <div id="catalogue">
+        <div class="filtre_categorie">
+            <div class="filtre">
+                <form method="post" action="catalogue.php" class="form">
+                    <h3 id="titre_filtre">
+                        FILTRES
+                    </h3>
+                    <label><input type="checkbox" name="prix_croissant" value="prix_croissant" <?php if (!empty($_POST['prix_croissant'])) { ?> checked <?php } ?>> Prix croissant</label> <br>
+                    <label><input type="checkbox" name="prix_decroissant" value="prix_decroissant" <?php if (!empty($_POST['prix_decroissant'])) { ?> checked <?php } ?>> Prix décroissant</label> <br>
+                    <label><input type="checkbox" name="recent" value="recent" <?php if (!empty($_POST['recent'])) { ?>
+                                checked <?php } ?>> Récent</label> <br>
+                    <label><input type="checkbox" name="ancien" value="ancien" <?php if (!empty($_POST['ancien'])) { ?>
+                                checked <?php } ?>> Ancien</label> <br>
+                    <h4 id="appliquer_filtre">
+                        <input type="submit" id="appliquer" value="Appliquer">
+                    </h4>
+                </form>
+            </div>
+
+
+            <div class="categorie">
+                <h3 id="titre_categories">
+                    CATEGORIES
                 </h3>
-                <label><input type="checkbox" name="prix_croissant" value="prix_croissant" <?php if (!empty($_POST['prix_croissant'])) { ?> checked <?php } ?>> Prix croissant</label> <br>
-                <label><input type="checkbox" name="prix_decroissant" value="prix_decroissant" <?php if (!empty($_POST['prix_decroissant'])) { ?> checked <?php } ?>> Prix décroissant</label> <br>
-                <label><input type="checkbox" name="recent" value="recent" <?php if (!empty($_POST['recent'])) { ?> checked <?php } ?>> Récent</label> <br>
-                <label><input type="checkbox" name="ancien" value="ancien" <?php if (!empty($_POST['ancien'])) { ?> checked <?php } ?>> Ancien</label> <br>
-                <h4 id="appliquer_filtre">
-                    <input type="submit" id="appliquer" value="Appliquer">
-                </h4> 
-            </form>  
-        </div>
-        <div class="categorie">
-            <h3 id="titre_categories">
-                CATEGORIES
-            </h3>
-            <ul>
-                <li>Interieur</li>
-                <li>Exterieur</li>
-                <li>Sensation</li>
-                <li>En famille</li>
-                <li>Découverte</li>
-            </ul>
-        </div>
-    </div>
-    <div>
-        <div id="premiere_ligne">
-            <div class="produit_unitaire">
-                <img src="<?php echo $donnees['img']; ?>" alt="Carte_1">
-                <div class="description">
-                    <h3><?php echo $donnees['nomCarte']; ?></h3>
-                    <p> 
-                        <?php
-                        echo $donnees['description_carte']; 
-                        ?>
-                    </p>
-                    <button class="bouton_en_savoir_plus">En savoir plus...</button>
-                </div>
-            </div>
-
-            <?php 
-            $donnees = $reponse->fetch();
-            ?>   
-           
-           <div class="produit_unitaire">
-                <img src="<?php echo $donnees['img']; ?>" alt="Carte_2">
-                <div class="description">
-                    <h3><?php echo $donnees['nomCarte']; ?></h3>
-                    <p> 
-                        <?php
-                        echo $donnees['description_carte']; 
-                        ?>
-                    </p>
-                    <button class="bouton_en_savoir_plus">En savoir plus...</button>
-                </div>
-            </div>
-            <?php 
-            $donnees = $reponse->fetch();
-            ?>      
-            <div class="produit_unitaire">
-                <img src="<?php echo $donnees['img']; ?>" alt="Carte_3">
-                <div class="description">
-                    <h3><?php echo $donnees['nomCarte']; ?></h3>
-                    <p> 
-                        <?php
-                        echo $donnees['description_carte']; 
-                        ?>
-                    </p>
-                    <button class="bouton_en_savoir_plus">En savoir plus...</button>
-                </div>
+                <ul>
+                    <li>Interieur</li>
+                    <li>Exterieur</li>
+                    <li>Sensation</li>
+                    <li>En famille</li>
+                    <li>Découverte</li>
+                </ul>
             </div>
         </div>
-        <?php 
-            $donnees = $reponse->fetch();
-        ?>   
-        <div id="deuxieme_ligne">
-        <div class="produit_unitaire">
-                <img src="<?php echo $donnees['img']; ?>" alt="Carte_4">
-                <div class="description">
-                    <h3><?php echo $donnees['nomCarte']; ?></h3>
-                    <p> 
-                        <?php
-                        echo $donnees['description_carte']; 
-                        ?>
-                    </p>
-                    <button class="bouton_en_savoir_plus">En savoir plus...</button>
+        <div>
+            <div id="premiere_ligne">
+                <div class="produit_unitaire">
+                    <img src="../assets/1.jpg" alt="Carte football">
+                    <div class="description">
+                        <h3>Offre football</h3>
+                        <p>Profitez d'une offre de réduction de 50% sur des cours de football auprès de nos partenaires.
+                        </p>
+                        <button class="bouton_en_savoir_plus">En savoir plus...</button>
+                    </div>
+                </div>
+                <div class="produit_unitaire">
+                    <img src="../assets/2.jpg" alt="Carte football">
+                    <div class="description">
+                        <h3>Offre football</h3>
+                        <p>Profitez d'une offre de réduction de 50% sur des cours de football auprès de nos partenaires.
+                        </p>
+                        <button class="bouton_en_savoir_plus">En savoir plus...</button>
+                    </div>
+                </div>
+                <div class="produit_unitaire">
+                    <img src="../assets/3.jpg" alt="Carte football">
+                    <div class="description">
+                        <h3>Offre football</h3>
+                        <p>Profitez d'une offre de réduction de 50% sur des cours de football auprès de nos partenaires.
+                        </p>
+                        <button class="bouton_en_savoir_plus">En savoir plus...</button>
+                    </div>
                 </div>
             </div>
-            <?php 
-            $donnees = $reponse->fetch();
-            ?>   
-            <div class="produit_unitaire">
-                <img src="<?php echo $donnees['img']; ?>" alt="Carte_5">
-                <div class="description">
-                    <h3><?php echo $donnees['nomCarte']; ?></h3>
-                    <p> 
-                        <?php
-                        echo $donnees['description_carte']; 
-                        ?>
-                    </p>
-                    <button class="bouton_en_savoir_plus">En savoir plus...</button>
+            <div id="deuxieme_ligne">
+                <div class="produit_unitaire">
+                    <img src="../assets/1.jpg" alt="Carte football">
+                    <div class="description">
+                        <h3>Offre football</h3>
+                        <p>Profitez d'une offre de réduction de 50% sur des cours de football auprès de nos partenaires.
+                        </p>
+                        <button class="bouton_en_savoir_plus">En savoir plus...</button>
+                    </div>
+                </div>
+                <div class="produit_unitaire">
+                    <img src="../assets/2.jpg" alt="Carte football">
+                    <div class="description">
+                        <h3>Offre football</h3>
+                        <p>Profitez d'une offre de réduction de 50% sur des cours de football auprès de nos partenaires.
+                        </p>
+                        <button class="bouton_en_savoir_plus">En savoir plus...</button>
+                    </div>
+                </div>
+                <div class="produit_unitaire">
+                    <img src="../assets/3.jpg" alt="Carte football">
+                    <div class="description">
+                        <h3>Offre football</h3>
+                        <p>Profitez d'une offre de réduction de 50% sur des cours de football auprès de nos partenaires.
+                        </p>
+                        <button class="bouton_en_savoir_plus">En savoir plus...</button>
+                    </div>
                 </div>
             </div>
-            <?php 
-            $donnees = $reponse->fetch();
-            ?>   
-            <div class="produit_unitaire">
-                <img src="<?php echo $donnees['img']; ?>" alt="Carte_6">
-                <div class="description">
-                    <h3><?php echo $donnees['nomCarte']; ?></h3>
-                    <p> 
-                        <?php
-                        echo $donnees['description_carte']; 
-                        ?>
-                    </p>
-                    <button class="bouton_en_savoir_plus">En savoir plus...</button>
+            <div id="prev_next">
+                <div id="precedent">
                 </div>
-            </div>
-        </div>
-        
-        <div id="prev_next">
-            <div id="page_precedente">
-                <form method="POST" action="">
-                    <button type="submit" name="decrement">
-                        <img src="../assets/arrow.svg" alt="Flèche" style="width: 33px;">
-                        Précédent
-                    </button>
-                </form>
-                <?php
-                if (isset($_POST['increment'])) {
-                    $_SESSION['count']++;
-                }
-                ?>
-            </div>
-            <div id="numero">
-                <?php
-                echo $_SESSION['count'];
-                ?>
-            </div>
-            <div id="page_suivante">
-                <form method="POST" action="">
-                    <button type="submit" name="increment">
-                        <img src="../assets/arrow.svg" alt="Flèche" style="transform: scaleX(-1); width: 33px;">
-                        Suivant
-                    </button>
-                </form>
-                <?php
-                if (isset($_POST['decrement']) && $_SESSION['count'] > 0) {
-                    $_SESSION['count']--;
-                } ?>
+                <div id="numero"></div>
+                <div id="suivant">
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 
-<?php include('footer.php') ?>
-<script src="../javascript/menu.js"></script>
+    <?php include('footer.php') ?>
+    <script src="../javascript/menu.js"></script>
 
 </body>
+
 </html>
