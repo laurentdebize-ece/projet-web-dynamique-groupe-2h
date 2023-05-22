@@ -8,8 +8,8 @@ body {
 
 .produits_phares {
     text-transform : uppercase;
-    padding: 50px;
     margin: 20px;
+    margin-left: 100px;
 }
 
 .carroussel {
@@ -119,8 +119,9 @@ body {
     display: flex;
     justify-content: space-around;
     flex-direction: column;
-    height: 565px;
-    border: solid black 2px;
+    height: 600px;
+    margin-top: 50px;
+    
 }
 
 .filtre {
@@ -129,8 +130,8 @@ body {
     border-radius: 8px;
     width: 200px;
     margin-left: 30px;
+    text-align: center;
 }
-
 
 h3 {
     text-align: center;
@@ -154,6 +155,10 @@ h3 {
 }
 
 .categorie {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: #960018;
     color: #F8F1F1;
     border-radius: 8px;
@@ -161,8 +166,29 @@ h3 {
     margin-left: 30px;
 }
 
+.categorie ul {
+    margin-bottom: 10px;
+}
+
 .categorie li {
+    text-align: center;
     margin: 10px;
+}
+
+.categorie li input {
+    border: none;
+    background-color: transparent;
+    font-family: "DIN Alternate", sans-serif;
+    font-size: 17px;
+    color: #F8F1F1;
+}
+
+.barCategorie {
+    width: 30px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #F8F1F1;
+    margin-left: 40px;
 }
 
 #produits {

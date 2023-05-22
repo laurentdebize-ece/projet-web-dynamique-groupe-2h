@@ -12,53 +12,52 @@
 
 <body>
 
-    <?php include('menu.php') ?>
+<?php include('menu.php') ?>
+<?php include('connexion_base.php') ?>
 
-    <?php include('connexion_base.php') ?>
 
+<?php
+session_start();
 
-    <?php
-    session_start();
+if (!isset($_SESSION['count'])) {
+    $_SESSION['count'] = 0;
+}
 
-    if (!isset($_SESSION['count'])) {
-        $_SESSION['count'] = 0;
-    }
-
-    ?>
+?>
     <?php $compteur_de_filtres = 0; ?>
 
 
-    <?php
-    if (!empty($_POST['prix_croissant'])) {
-        $compteur_de_filtres = $compteur_de_filtres + 1;
-    }
+<?php
+if (!empty($_POST['prix_croissant'])) {
+    $compteur_de_filtres = $compteur_de_filtres + 1;
+}
 
-    if (!empty($_POST['prix_decroissant'])) {
-        $compteur_de_filtres = $compteur_de_filtres + 1;
-    }
+if (!empty($_POST['prix_decroissant'])) {
+    $compteur_de_filtres = $compteur_de_filtres + 1;
+}
 
-    if (!empty($_POST['recent'])) {
-        $compteur_de_filtres = $compteur_de_filtres + 1;
-    }
+if (!empty($_POST['recent'])) {
+    $compteur_de_filtres = $compteur_de_filtres + 1;
+}
 
-    if (!empty($_POST['ancien'])) {
-        $compteur_de_filtres = $compteur_de_filtres + 1;
-    }
+if (!empty($_POST['ancien'])) {
+    $compteur_de_filtres = $compteur_de_filtres + 1;
+} 
 
-    if (empty($_POST['num_page']) or $_POST['num_page'] == 0) {
-        $num_page = 0;
-    } else {
-        $num_page = $_POST['num_page'];
-    }
+if (empty($_POST['num_page']) or $_POST['num_page'] == 0) {
+    $num_page = 0;
+} else {
+    $num_page = $_POST['num_page'];
+}
 
-    $start = $num_page * 6;
-    $count = $num_page * 6 + 6;
+$start = $num_page * 6;
+$count = $num_page * 6 + 6;
 
 if ($compteur_de_filtres == 0) {
     $reponse = $bdd->query("SELECT id, img, prix, nomCarte, description_carte FROM Carte LIMIT $start, $count;");
 }
 
-    $donnees = $reponse->fetch();
+$donnees = $reponse->fetch();
 
 
 if ($compteur_de_filtres == 1) {
@@ -77,11 +76,11 @@ if ($compteur_de_filtres == 1) {
 }
 
 
-    ?>
+?>
 
-    <h1 class="produits_phares">
-        nos produits phares
-    </h1>
+<h1 class="produits_phares">
+    nos produits phares ...
+</h1>
 
     <div class="carroussel">
         <section class="MD">
@@ -133,29 +132,26 @@ if ($compteur_de_filtres == 1) {
     <div id="catalogue">
         <div class="filtre_categorie">
             <div class="filtre">
-                <form method="post" action="catalogue.php" class="fomrFiltre">
-
+                <form method="post" action="catalogue.php" class="form">
                     <h3 id="titre_filtre">
                         FILTRES
                     </h3>
-
-                    <input type="radio" name="filtre" value="prix_croissant" <?php if (!empty($_POST['prix_croissant'])) { ?> checked <?php } ?>>
+                    
+                    
+                        <input type="radio" name="filtre" value="prix_croissant" <?php if (!empty($_POST['prix_croissant'])) { ?> checked <?php } ?>>
                     <label for="prix_croissant">Prix Croissant</label><br>
 
                     <input type="radio" name="filtre" value="prix_decroissant" <?php if (!empty($_POST['prix_decroissant'])) { ?> checked <?php } ?>>
                     <label for="prix_decroissant">Prix Décroissant</label><br>
 
-                    <input type="radio" name="filtre" value="recent" <?php if (!empty($_POST['recent'])) { ?> checked
-                        <?php } ?>>
+                    <input type="radio" name="filtre" value="recent" <?php if (!empty($_POST['recent'])) { ?> checked <?php } ?>>
                     <label for="recent">Récent</label><br>
 
-                    <input type="radio" name="filtre" value="ancien" <?php if (!empty($_POST['ancien'])) { ?> checked
-                        <?php } ?>>
+                    <input type="radio" name="filtre" value="ancien" <?php if (!empty($_POST['ancien'])) { ?> checked <?php } ?>>
                     <label for="ancien">Ancien</label><br>
 
-
                     <input type="submit" id="appliquer" value="Appliquer" class="filtreSubmit">
-
+                
                 </form>
             </div>
 
@@ -165,154 +161,147 @@ if ($compteur_de_filtres == 1) {
                     CATEGORIES
                 </h3>
                 <ul>
-                    <li>Interieur</li>
-                    <li>Exterieur</li>
-                    <li>Sensation</li>
-                    <li>En famille</li>
-                    <li>Découverte</li>
+                    <li><input type="button" class="buttonCat" value="Interieur"></li>
+                    <div class="barCategorie"></div>
+                    <li><input type="button" class="buttonCat" value="Exterieur"></li>
+                    <div class="barCategorie"></div>
+                    <li><input type="button" class="buttonCat" value="Sensation"></li>
+                    <div class="barCategorie"></div>
+                    <li><input type="button" class="buttonCat" value="En famille"></li>
+                    <div class="barCategorie"></div>
+                    <li><input type="button" class="buttonCat" value="Découverte"></li>
                 </ul>
             </div>
         </div>
-        <div id="premiere_ligne">
-            <div class="produit_unitaire">
-                <img src="<?php echo $donnees['img']; ?>" alt="Carte_1">
-                <div class="description">
-                    <h3>
-                        <?php echo $donnees['nomCarte']; ?>
-                    </h3>
-                    <p>
-                        <?php
-                        echo $donnees['description_carte'];
-                        ?>
-                    </p>
-                    <form action="catalogue_en_savoir_plus.php" method="get">
-                        <input type="hidden" name="id" value="<?php echo $donnees['id']; ?>">
-                        <button class="bouton_en_savoir_plus" type="submit">En savoir plus</button>
+        <div class="catalogue">
+            <div id="premiere_ligne">
+                <div class="produit_unitaire">
+                    <img src="<?php echo $donnees['img']; ?>" alt="Carte_1">
+                    <div class="description">
+                        <h3><?php echo $donnees['nomCarte']; ?></h3>
+                        <p>
+                            <?php
+                            echo $donnees['description_carte'];
+                            ?>
+                        </p>
+                        <form action="catalogue_en_savoir_plus.php" method="get">
+                            <input type="hidden" name="id" value="<?php echo $donnees['id']; ?>">
+                            <button class="bouton_en_savoir_plus" type="submit">En savoir plus</button>
+                        </form>
+                    </div>
+                </div>
+
+                <?php
+                $donnees = $reponse->fetch();
+                ?>
+
+                <div class="produit_unitaire">
+                    <img src="<?php echo $donnees['img']; ?>" alt="Carte_2">
+                    <div class="description">
+                        <h3><?php echo $donnees['nomCarte']; ?></h3>
+                        <p>
+                            <?php
+                            echo $donnees['description_carte'];
+                            ?>
+                        </p>
+                        <button class="bouton_en_savoir_plus">En savoir plus...</button>
+                    </div>
+                </div>
+                <?php
+                $donnees = $reponse->fetch();
+                ?>
+                <div class="produit_unitaire">
+                    <img src="<?php echo $donnees['img']; ?>" alt="Carte_3">
+                    <div class="description">
+                        <h3><?php echo $donnees['nomCarte']; ?></h3>
+                        <p>
+                            <?php
+                            echo $donnees['description_carte'];
+                            ?>
+                        </p>
+                        <button class="bouton_en_savoir_plus">En savoir plus...</button>
+                    </div>
+                </div>
+            </div>
+            <?php
+            $donnees = $reponse->fetch();
+            ?>
+            <div id="deuxieme_ligne">
+                <div class="produit_unitaire">
+                    <img src="<?php echo $donnees['img']; ?>" alt="Carte_4">
+                    <div class="description">
+                        <h3><?php echo $donnees['nomCarte']; ?></h3>
+                        <p>
+                            <?php
+                            echo $donnees['description_carte'];
+                            ?>
+                        </p>
+                        <button class="bouton_en_savoir_plus">En savoir plus...</button>
+                    </div>
+                </div>
+                <?php
+                $donnees = $reponse->fetch();
+                ?>
+                <div class="produit_unitaire">
+                    <img src="<?php echo $donnees['img']; ?>" alt="Carte_5">
+                    <div class="description">
+                        <h3><?php echo $donnees['nomCarte']; ?></h3>
+                        <p>
+                            <?php
+                            echo $donnees['description_carte'];
+                            ?>
+                        </p>
+                        <button class="bouton_en_savoir_plus">En savoir plus...</button>
+                    </div>
+                </div>
+                <?php
+                $donnees = $reponse->fetch();
+                ?>
+                <div class="produit_unitaire">
+                    <img src="<?php echo $donnees['img']; ?>" alt="Carte_6">
+                    <div class="description">
+                        <h3><?php echo $donnees['nomCarte']; ?></h3>
+                        <p>
+                            <?php
+                            echo $donnees['description_carte'];
+                            ?>
+                        </p>
+                        <button class="bouton_en_savoir_plus">En savoir plus...</button>
+                    </div>
+                </div>
+            </div>
+            <div id="prev_next">
+                <div id="page_precedente">
+                    <form method="POST" action="">
+                        <button type="submit" name="decrement">
+                            <img src="../assets/arrow.svg" alt="Flèche" style="width: 33px;">
+                            Précédent
+                        </button>
                     </form>
+                    <?php
+                    if (isset($_POST['increment'])) {
+                        $_SESSION['count']++;
+                    }
+                    ?>
+                </div>
+                <div id="numero">
+                    <?php
+                    echo $_SESSION['count'];
+                    ?>
+                </div>
+                <div id="page_suivante">
+                    <form method="POST" action="">
+                        <button type="submit" name="increment">
+                            <img src="../assets/arrow.svg" alt="Flèche" style="transform: scaleX(-1); width: 33px;">
+                            Suivant
+                        </button>
+                    </form>
+                    <?php
+                    if (isset($_POST['decrement']) && $_SESSION['count'] > 0) {
+                        $_SESSION['count']--;
+                    } ?>
                 </div>
             </div>
-
-            <?php
-            $donnees = $reponse->fetch();
-            ?>
-
-            <div class="produit_unitaire">
-                <img src="<?php echo $donnees['img']; ?>" alt="Carte_2">
-                <div class="description">
-                    <h3>
-                        <?php echo $donnees['nomCarte']; ?>
-                    </h3>
-                    <p>
-                        <?php
-                        echo $donnees['description_carte'];
-                        ?>
-                    </p>
-                    <button class="bouton_en_savoir_plus">En savoir plus...</button>
-                </div>
-            </div>
-            <?php
-            $donnees = $reponse->fetch();
-            ?>
-            <div class="produit_unitaire">
-                <img src="<?php echo $donnees['img']; ?>" alt="Carte_3">
-                <div class="description">
-                    <h3>
-                        <?php echo $donnees['nomCarte']; ?>
-                    </h3>
-                    <p>
-                        <?php
-                        echo $donnees['description_carte'];
-                        ?>
-                    </p>
-                    <button class="bouton_en_savoir_plus">En savoir plus...</button>
-                </div>
-            </div>
-        </div>
-        <?php
-        $donnees = $reponse->fetch();
-        ?>
-        <div id="deuxieme_ligne">
-            <div class="produit_unitaire">
-                <img src="<?php echo $donnees['img']; ?>" alt="Carte_4">
-                <div class="description">
-                    <h3>
-                        <?php echo $donnees['nomCarte']; ?>
-                    </h3>
-                    <p>
-                        <?php
-                        echo $donnees['description_carte'];
-                        ?>
-                    </p>
-                    <button class="bouton_en_savoir_plus">En savoir plus...</button>
-                </div>
-            </div>
-            <?php
-            $donnees = $reponse->fetch();
-            ?>
-            <div class="produit_unitaire">
-                <img src="<?php echo $donnees['img']; ?>" alt="Carte_5">
-                <div class="description">
-                    <h3>
-                        <?php echo $donnees['nomCarte']; ?>
-                    </h3>
-                    <p>
-                        <?php
-                        echo $donnees['description_carte'];
-                        ?>
-                    </p>
-                    <button class="bouton_en_savoir_plus">En savoir plus...</button>
-                </div>
-            </div>
-            <?php
-            $donnees = $reponse->fetch();
-            ?>
-            <div class="produit_unitaire">
-                <img src="<?php echo $donnees['img']; ?>" alt="Carte_6">
-                <div class="description">
-                    <h3>
-                        <?php echo $donnees['nomCarte']; ?>
-                    </h3>
-                    <p>
-                        <?php
-                        echo $donnees['description_carte'];
-                        ?>
-                    </p>
-                    <button class="bouton_en_savoir_plus">En savoir plus...</button>
-                </div>
-            </div>
-        </div>
-        <div id="prev_next">
-            <div id="page_precedente">
-                <form method="POST" action="">
-                    <button type="submit" name="decrement">
-                        <img src="../assets/arrow.svg" alt="Flèche" style="width: 33px;">
-                        Précédent
-                    </button>
-                </form>
-                <?php
-                if (isset($_POST['increment'])) {
-                    $_SESSION['count']++;
-                }
-                ?>
-            </div>
-            <div id="numero">
-                <?php
-                echo $_SESSION['count'];
-                ?>
-            </div>
-            <div id="page_suivante">
-                <form method="POST" action="">
-                    <button type="submit" name="increment">
-                        <img src="../assets/arrow.svg" alt="Flèche" style="transform: scaleX(-1); width: 33px;">
-                        Suivant
-                    </button>
-                </form>
-                <?php
-                if (isset($_POST['decrement']) && $_SESSION['count'] > 0) {
-                    $_SESSION['count']--;
-                } ?>
-            </div>
-        </div>
         </div>
     </div>
 
