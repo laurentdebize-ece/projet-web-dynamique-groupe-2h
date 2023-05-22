@@ -43,8 +43,8 @@ $donnees = $requete->fetch();
                     Prix : <?php echo $donnees['prix']; ?> €
                 </p>
                 <form method="POST" action="panier.php" class="forme">
-                    <input type="hidden" name="id" value="<?php echo $donnees['id']; ?>">
-                    <input type="number" name="quantite" value="1">
+                    <input type="hidden" name="idCarte" value="<?php echo $donnees['id']; ?>">
+                    <input type="number" name="qteCarte" value="1">
                     <input type="submit" class="appliquer" value="Ajouter au panier">
                 </form>
             </div>
@@ -57,6 +57,6 @@ $donnees = $requete->fetch();
 
 include('footer.php') ?>
 <script src="../javascript/menu.js"></script>
-
+<script src="../javascript/catalogue_en_savoir_plus.js"></script>
 </body>
 </html>
