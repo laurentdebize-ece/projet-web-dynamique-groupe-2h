@@ -1,0 +1,70 @@
+.main {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 25px 0;
+    padding: 50px 25px;
+}
+
+.page-title {
+    padding: 20px;
+}
+
+.section-title {
+    padding: 10px 0;
+}
+
+.adresse {
+    color: #272727;
+    padding: 10px 0;
+}
+
+.info-site {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    padding: 15px 20px;
+    justify-content: flex-start;
+}
+
+.contact-form {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px 20px;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.input-field {
+    padding: 15px 20px;
+    margin: 8px 0;
+    border: 2px solid #D8D8D8;
+    border-radius: 2px;
+    outline: 0;
+    background-color: #D8D8D8;
+    font-size: 1em;
+    max-width: 100%;
+    min-width: 100%;
+}
+
+.submit-button {
+    border: 2px solid #272727;
+    color: #272727;
+    background: linear-gradient(to left, white 50%, #272727 50%) right;
+    background-size: 200%;
+    padding: 15px 30px;
+    margin-top: 20px;
+    text-transform: uppercase;
+    transition: all 0.3s;
+}
+
+.submit-button:hover {
+    background-position: left;
+    color: white;
+}
