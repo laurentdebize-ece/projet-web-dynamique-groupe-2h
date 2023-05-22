@@ -6,22 +6,23 @@ function creationPanier()
     if (!isset($_SESSION["panier"])) {
         $_SESSION["panier"] = array();
         $_SESSION["panier"]["idCarte"] = array();
+        $_SESSION["panier"]["nomCarte"] = array();
         $_SESSION["panier"]["qteCarte"] = array();
         $_SESSION["panier"]["prixCarte"] = array();
-        $_SESSION["panier"]["verrou"] = array();
     }
     return true;
 }
 
 // Fonction pour ajouter une carte au panier
-function ajouterCarte($idCarte, $qteCarte, $prixCarte)
+function ajouterCarte($idCarte, $qteCarte, $prixCarte, $nomCarte)
 {
-    if (creationPanier() && !isVerrouille()) {
+    if (creationPanier()) {
         $positionCarte = array_search($idCarte, $_SESSION["panier"]["idCarte"]);
         if ($positionCarte !== false) {
             $_SESSION["panier"]["qteCarte"][$positionCarte] += $qteCarte;
         } else {
             array_push($_SESSION["panier"]["idCarte"], $idCarte);
+            array_push($_SESSION["panier"]["nomCarte"], $nomCarte);
             array_push($_SESSION["panier"]["qteCarte"], $qteCarte);
             array_push($_SESSION["panier"]["prixCarte"], $prixCarte);
         }
@@ -33,10 +34,11 @@ function ajouterCarte($idCarte, $qteCarte, $prixCarte)
 // Fonction pour supprimer un produit
 function supprimerCarte($idCarte)
 {
-    if (creationPanier() && !isVerrouille()) {
+    if (creationPanier()) {
         $tmp = array();
         $tmp["idCarte"] = array();
         $tmp["qteCarte"] = array();
+        $tmp["nomCarte"] = array();
         $tmp["prixCarte"] = array();
         $tmp["verrou"] = $_SESSION["panier"]["verrou"];
 
@@ -45,6 +47,7 @@ function supprimerCarte($idCarte)
                 array_push($tmp["idCarte"], $_SESSION["panier"]["idCarte"][$i]);
                 array_push($tmp["qteCarte"], $_SESSION["panier"]["qteProduit"][$i]);
                 array_push($tmp["prixCarte"], $_SESSION["panier"]["prixCarte"][$i]);
+                array_push($tmp["nomCarte"], $_SESSION["panier"]["nomCarte"][$i]);
             }
         }
         $_SESSION["panier"] = $tmp;
@@ -57,7 +60,7 @@ function supprimerCarte($idCarte)
 // Fonction pour modifier une carte
 function modifQteCarte($idCarte, $qteCarte)
 {
-    if (creationPanier() && !isVerouille()) {
+    if (creationPanier()) {
         if ($qteCarte > 0) {
             $positionCarte = array_search($idCarte, $_SESSION["panier"]["idCarte"]);
             if ($positionCarte !== false) {
@@ -78,16 +81,6 @@ function montantGlobal()
         $total += $_SESSION["panier"]["qteCarte"][$i] * $_SESSION["panier"]["prixCarte"][$i];
     }
     return $total;
-}
-
-// Le verrou permet de savoir si le panier est validé avant de passer à l'achat
-function isVerrouille()
-{
-    if (isset($_SESSION["panier"]) && $_SESSION["panier"]["verrou"]) {
-        return true;
-    } else {
-        return false;
-    }
 }
 
 function compterArticle()
