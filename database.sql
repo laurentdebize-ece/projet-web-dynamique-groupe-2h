@@ -60,6 +60,10 @@ INSERT INTO statut
 VALUES (NULL, 'Partenaire');
 
 INSERT INTO Users
-VALUES (NULL, 'Reinert', 'Aurélien', MD5('whleutwc'), 'aurelien.reinert@edu.ece.fr', '0670987563', 1, NULL);
+VALUES (NULL, 'Reinert', 'Aurélien', MD5('whleutwc'), 'aurelien.reinert@edu.ece.fr', '0670987563', 1, NULL),
+(NULL, 'Duvanel', 'Louis', 'duvlouis', 'louis.duvanel@edu.ece.fr', '0782656509', 1, NULL),
+(NULL, 'Balsalobre', 'Thomas', 'thm', 'thomas.balsalobre@edu.ece.fr', '678997989', 3, NULL);
+INSERT INTO Users
+
 
 COMMIT;

@@ -33,13 +33,13 @@ session_start();
                 $id_b3 = "cb_utilisateur";
                 $id_b4 = "settings_utilisateur";
                 break;
-            case 1: //Utilisateur
+            case 1: //Admin
                 $id_b1 = "donnees_perso";
                 $id_b2 = "panier";
                 $id_b3 = "cb";
                 $id_b4 = "settings";
                 break;
-            case 2: //Utilisateur
+            case 2: //partenaire
                 $id_b1 = "donnees_perso_partenaire";
                 $id_b2 = "panier_partenaire";
                 $id_b3 = "cb_partenaire";
@@ -58,7 +58,17 @@ session_start();
     <div class="main_container">
         <div class="titre_container">
             <h2> Bonjour <span class="user_text">
-                    <?php echo $_SESSION['prenom'] ?>
+                    <?php
+                    switch($_SESSION['statut']){
+                        case 1 :
+                        case 3 :
+                        echo $_SESSION['prenom'];
+                        break;
+                        case 2 :
+                        echo $_SESSION['nom'];
+                        break;
+                    }
+                    ?>
                 </span></h2>
         </div>
         <div class="main_informations_container">
