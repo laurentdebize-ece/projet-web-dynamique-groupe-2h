@@ -63,7 +63,7 @@ VALUES (NULL, 'Partenaire');
 INSERT INTO Users
 VALUES (NULL, 'Reinert', 'Aurélien', MD5('whleutwc'), 'aurelien.reinert@edu.ece.fr', '0670987563', 1, NULL),
 (NULL, 'Cougnard', 'Gael', MD5('123456789'), 'gael.cougnard@edu.ece.fr', '0649515524', 1, NULL),
-(NULL, 'Patoz', 'Guillaume', MD5('123456789'), 'guillaume.patoz@edu.ece.fr', '0657895112', 2, NULL);
+(NULL, 'Patoz', 'Guillaume', '123456789', 'guillaume.patoz@edu.ece.fr', '0657895112', 2, NULL);
 
 
 INSERT INTO Carte

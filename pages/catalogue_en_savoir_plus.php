@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<?php include('menu.php') 
+<?php include('menu.php');
 
 
 $img = $_POST['img'] ?>

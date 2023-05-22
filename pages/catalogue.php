@@ -12,75 +12,76 @@
 
 <body>
 
-<?php include('menu.php') ?>
-<?php include('connexion_base.php') ?>
+    <?php include('menu.php') ?>
+
+    <?php include('connexion_base.php') ?>
 
 
-<?php
-session_start();
+    <?php
+    session_start();
 
-if (!isset($_SESSION['count'])) {
-    $_SESSION['count'] = 0;
-}
+    if (!isset($_SESSION['count'])) {
+        $_SESSION['count'] = 0;
+    }
 
-?>
+    ?>
     <?php $compteur_de_filtres = 0; ?>
 
 
-<?php
-if (!empty($_POST['prix_croissant'])) {
-    $compteur_de_filtres = $compteur_de_filtres + 1;
-}
-
-if (!empty($_POST['prix_decroissant'])) {
-    $compteur_de_filtres = $compteur_de_filtres + 1;
-}
-
-if (!empty($_POST['recent'])) {
-    $compteur_de_filtres = $compteur_de_filtres + 1;
-}
-
-if (!empty($_POST['ancien'])) {
-    $compteur_de_filtres = $compteur_de_filtres + 1;
-} 
-
-if (empty($_POST['num_page']) or $_POST['num_page'] == 0) {
-    $num_page = 0;
-} else {
-    $num_page = $_POST['num_page'];
-}
-
-$start = $num_page * 6;
-$count = $num_page * 6 + 6;
-
-if ($compteur_de_filtres == 0) {
-    $reponse = $bdd->query("SELECT img, prix, nomCarte, description_carte FROM Carte LIMIT $start, $count;");
-}
-
-$donnees = $reponse->fetch();
-
-
-if ($compteur_de_filtres == 1) {
-    if (!empty($_POST['prix_croissant'])){
-        $reponse = $bdd->query("SELECT img, nomCarte, description_carte FROM Carte ORDER BY prix DESC LIMIT $start, $count;");
+    <?php
+    if (!empty($_POST['prix_croissant'])) {
+        $compteur_de_filtres = $compteur_de_filtres + 1;
     }
-    if (!empty($_POST['prix_decroissant'])){
-        $reponse = $bdd->query("SELECT img, nomCarte, description_carte FROM Carte ORDER BY prix ASC LIMIT $start, $count;");
+
+    if (!empty($_POST['prix_decroissant'])) {
+        $compteur_de_filtres = $compteur_de_filtres + 1;
     }
-    if (!empty($_POST['recent'])){
-        $reponse = $bdd->query("SELECT img, nomCarte, description_carte FROM Carte ORDER BY date_ajout ASC LIMIT $start, $count;");
+
+    if (!empty($_POST['recent'])) {
+        $compteur_de_filtres = $compteur_de_filtres + 1;
     }
-    if (!empty($_POST['ancien'])){
-        $reponse = $bdd->query("SELECT img, nomCarte, description_carte FROM Carte ORDER BY date_ajout DESC LIMIT $start, $count;");
+
+    if (!empty($_POST['ancien'])) {
+        $compteur_de_filtres = $compteur_de_filtres + 1;
     }
-}
+
+    if (empty($_POST['num_page']) or $_POST['num_page'] == 0) {
+        $num_page = 0;
+    } else {
+        $num_page = $_POST['num_page'];
+    }
+
+    $start = $num_page * 6;
+    $count = $num_page * 6 + 6;
+
+    if ($compteur_de_filtres == 0) {
+        $reponse = $bdd->query("SELECT img, prix, nomCarte, description_carte FROM Carte LIMIT $start, $count;");
+    }
+
+    $donnees = $reponse->fetch();
 
 
-?>
+    if ($compteur_de_filtres == 1) {
+        if (!empty($_POST['prix_croissant'])) {
+            $reponse = $bdd->query("SELECT img, nomCarte, description_carte FROM Carte ORDER BY prix DESC LIMIT $start, $count;");
+        }
+        if (!empty($_POST['prix_decroissant'])) {
+            $reponse = $bdd->query("SELECT img, nomCarte, description_carte FROM Carte ORDER BY prix ASC LIMIT $start, $count;");
+        }
+        if (!empty($_POST['recent'])) {
+            $reponse = $bdd->query("SELECT img, nomCarte, description_carte FROM Carte ORDER BY date_ajout ASC LIMIT $start, $count;");
+        }
+        if (!empty($_POST['ancien'])) {
+            $reponse = $bdd->query("SELECT img, nomCarte, description_carte FROM Carte ORDER BY date_ajout DESC LIMIT $start, $count;");
+        }
+    }
 
-<h1 class="produits_phares">
-    nos produits phares
-</h1>
+
+    ?>
+
+    <h1 class="produits_phares">
+        nos produits phares
+    </h1>
 
     <div class="carroussel">
         <section class="MD">
@@ -132,19 +133,29 @@ if ($compteur_de_filtres == 1) {
     <div id="catalogue">
         <div class="filtre_categorie">
             <div class="filtre">
-                <form method="post" action="catalogue.php" class="form">
+                <form method="post" action="catalogue.php" class="fomrFiltre">
+
                     <h3 id="titre_filtre">
                         FILTRES
                     </h3>
-                    <label><input type="checkbox" name="prix_croissant" value="prix_croissant" <?php if (!empty($_POST['prix_croissant'])) { ?> checked <?php } ?>> Prix croissant</label> <br>
-                    <label><input type="checkbox" name="prix_decroissant" value="prix_decroissant" <?php if (!empty($_POST['prix_decroissant'])) { ?> checked <?php } ?>> Prix décroissant</label> <br>
-                    <label><input type="checkbox" name="recent" value="recent" <?php if (!empty($_POST['recent'])) { ?>
-                                checked <?php } ?>> Récent</label> <br>
-                    <label><input type="checkbox" name="ancien" value="ancien" <?php if (!empty($_POST['ancien'])) { ?>
-                                checked <?php } ?>> Ancien</label> <br>
-                    <h4 id="appliquer_filtre">
-                        <input type="submit" id="appliquer" value="Appliquer">
-                    </h4>
+
+                    <input type="radio" name="filtre" value="prix_croissant" <?php if (!empty($_POST['prix_croissant'])) { ?> checked <?php } ?>>
+                    <label for="prix_croissant">Prix Croissant</label><br>
+
+                    <input type="radio" name="filtre" value="prix_decroissant" <?php if (!empty($_POST['prix_decroissant'])) { ?> checked <?php } ?>>
+                    <label for="prix_decroissant">Prix Décroissant</label><br>
+
+                    <input type="radio" name="filtre" value="recent" <?php if (!empty($_POST['recent'])) { ?> checked
+                        <?php } ?>>
+                    <label for="recent">Récent</label><br>
+
+                    <input type="radio" name="filtre" value="ancien" <?php if (!empty($_POST['ancien'])) { ?> checked
+                        <?php } ?>>
+                    <label for="ancien">Ancien</label><br>
+
+
+                    <input type="submit" id="appliquer" value="Appliquer" class="filtreSubmit">
+
                 </form>
             </div>
 
@@ -162,12 +173,13 @@ if ($compteur_de_filtres == 1) {
                 </ul>
             </div>
         </div>
-        <div>
         <div id="premiere_ligne">
             <div class="produit_unitaire">
                 <img src="<?php echo $donnees['img']; ?>" alt="Carte_1">
                 <div class="description">
-                    <h3><?php echo $donnees['nomCarte']; ?></h3>
+                    <h3>
+                        <?php echo $donnees['nomCarte']; ?>
+                    </h3>
                     <p>
                         <?php
                         echo $donnees['description_carte'];
@@ -184,7 +196,9 @@ if ($compteur_de_filtres == 1) {
             <div class="produit_unitaire">
                 <img src="<?php echo $donnees['img']; ?>" alt="Carte_2">
                 <div class="description">
-                    <h3><?php echo $donnees['nomCarte']; ?></h3>
+                    <h3>
+                        <?php echo $donnees['nomCarte']; ?>
+                    </h3>
                     <p>
                         <?php
                         echo $donnees['description_carte'];
@@ -199,7 +213,9 @@ if ($compteur_de_filtres == 1) {
             <div class="produit_unitaire">
                 <img src="<?php echo $donnees['img']; ?>" alt="Carte_3">
                 <div class="description">
-                    <h3><?php echo $donnees['nomCarte']; ?></h3>
+                    <h3>
+                        <?php echo $donnees['nomCarte']; ?>
+                    </h3>
                     <p>
                         <?php
                         echo $donnees['description_carte'];
@@ -216,7 +232,9 @@ if ($compteur_de_filtres == 1) {
             <div class="produit_unitaire">
                 <img src="<?php echo $donnees['img']; ?>" alt="Carte_4">
                 <div class="description">
-                    <h3><?php echo $donnees['nomCarte']; ?></h3>
+                    <h3>
+                        <?php echo $donnees['nomCarte']; ?>
+                    </h3>
                     <p>
                         <?php
                         echo $donnees['description_carte'];
@@ -231,7 +249,9 @@ if ($compteur_de_filtres == 1) {
             <div class="produit_unitaire">
                 <img src="<?php echo $donnees['img']; ?>" alt="Carte_5">
                 <div class="description">
-                    <h3><?php echo $donnees['nomCarte']; ?></h3>
+                    <h3>
+                        <?php echo $donnees['nomCarte']; ?>
+                    </h3>
                     <p>
                         <?php
                         echo $donnees['description_carte'];
@@ -246,7 +266,9 @@ if ($compteur_de_filtres == 1) {
             <div class="produit_unitaire">
                 <img src="<?php echo $donnees['img']; ?>" alt="Carte_6">
                 <div class="description">
-                    <h3><?php echo $donnees['nomCarte']; ?></h3>
+                    <h3>
+                        <?php echo $donnees['nomCarte']; ?>
+                    </h3>
                     <p>
                         <?php
                         echo $donnees['description_carte'];
@@ -256,12 +278,11 @@ if ($compteur_de_filtres == 1) {
                 </div>
             </div>
         </div>
-            <div id="prev_next">
-                <div id="precedent">
-                </div>
-                <div id="numero"></div>
-                <div id="suivant">
-                </div>
+        <div id="prev_next">
+            <div id="precedent">
+            </div>
+            <div id="numero"></div>
+            <div id="suivant">
             </div>
         </div>
     </div>
