@@ -34,6 +34,8 @@
     ?>
     <div class="titre_bas">
         <a class="lien_compte" href="http://localhost:8888/projet-web-dynamique-groupe-2h/pages/creation_de_compte.php">Pas encore de compte ? Cliquez-ici !</a>
+        <br>
+        <a class="lien_compte" href="http://localhost:8888/projet-web-dynamique-groupe-2h/pages/accueil.php">Je ne veux pas créer de compte</a>
     </div>
 </div>
 </body>

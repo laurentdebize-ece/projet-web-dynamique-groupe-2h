@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="../stylesheet/login.css">
     <title>Document</title>
 </head>
 
@@ -25,6 +24,7 @@
         $reponse1 =$bdd->query("SELECT * FROM Users");
 
         //ID P est il vrai ?
+
         while ($donnees = $reponse1->fetch()) {
             if($id_p===$donnees['id'] && $donnees['statut']=="2"){
                
@@ -35,9 +35,14 @@
             $id = $bdd->lastInsertId();
 
             $reponse->closeCursor();
+            
+            echo "<script>window.location.assign('http://localhost:8888/projet-web-dynamique-groupe-2h/pages/compte.php');</script>";
+
         }
+        echo "<script>window.location.assign('http://localhost:8888/projet-web-dynamique-groupe-2h/pages/accueil.php');</script>";
+
     }
-    }
+}
     ?>
 </body>
 

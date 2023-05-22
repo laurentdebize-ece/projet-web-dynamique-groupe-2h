@@ -1,20 +1,14 @@
 <?php
+
 include("connexion_base.php");
 
-$reponse = $bdd->query("SELECT * FROM Users WHERE statut='2'");
+$reponse_dom = $bdd->query("SELECT * FROM Domaine");
 
-$tab_nom_part = array();
-$tab_activite_part = array();
+echo "<p class='liste-affichage-titre'>Liste des activités </p>";
 
-while ($donnees = $reponse->fetch()) {
-    array_push($tab_nom_part, $donnees['nom']);
+while ($donnees_2 = $reponse_dom->fetch()) {
+    echo "<p>".$donnees_2['nomDomaine']."</p>";
 }
 
-echo"<p class='liste-affichage-titre'>Liste </p>";
-
-foreach($tab_nom_part as $valeur){
-    echo "<p>Nom : " . $valeur . "</p>";
-}
-
-$reponse->closeCursor();
+$reponse_dom->closeCursor();
 ?>

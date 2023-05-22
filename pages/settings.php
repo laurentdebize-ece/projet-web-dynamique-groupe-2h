@@ -11,6 +11,7 @@ session_start();
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="../stylesheet/donnees.css">
     <script src="../javascript/liste.js"></script>
+    <script src="../javascript/modifier_entite.js"></script>
 </head>
 
 <body>
@@ -49,7 +50,7 @@ session_start();
                         <div>
                             <p class="legende">Ajouter une carte</p>
                         </div>
-                        <form method="post">
+                        <form method="post" action="settings_traitement_bis.php">
                             <label for="nom_carte"></label>
                             <input type="text" name="nom_carte" placeholder="Nom Carte">
                             <label for="prix_carte"></label>
@@ -60,17 +61,34 @@ session_start();
                             <input type="number" name="id_partenaire" placeholder="ID du partenaire">
                             <input type="submit">
                         </form>
-                        <?php
-                        include("settings_traitement_bis.php");
-                        ?>
                     </div>
                     <div class="log-out-container">
+                        <p class="legend">Supression de données
+                        <p>
+                        <form method="post" action="settings_traitement_delete.php">
+                            <label for="delete_mail_part"></label>
+                            <input type="email" name="delete_mail_part" placeholder="Mail du partenaire">
+                            <label for="delete_domaine"></label>
+                            <input type="text" name="delete_domaine" placeholder="Nom de l'activité">
+                            <input type="submit">
+                        </form>
                         <input type="button" value="Déconnexion" id="log-out">
                     </div>
                 </div>
             </div>
-            <div class="check-container">
+            <div class="check-modif-container">
+                <div class="check-container">
 
+                </div>
+                <div class="modif-container">
+                    <div class="modif-container-1">
+                        <input type="button" id="partenaire-modif" value="Modifier un partenaire">
+                        <input type="button" id="carte-modif" value="Modifier une carte">
+                        <input type="button" id="domaine-modif" value="Modifier une activité">
+                    </div>
+                    <div class="modif-container-2">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
