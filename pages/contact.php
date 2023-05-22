@@ -19,7 +19,7 @@
         </div>
         <div class="contact-form">
             <h2 class="section-title">Formulaire de contact</h2>
-            <form action="" method="post">
+            <form action="contact-treatment.php" method="post">
                 <input name="name" type="text" placeholder="Nom" class="input-field">
                 <input name="email" type="email" placeholder="Adresse mail" class="input-field">
                 <textarea name="message" placeholder="Entrez ici votre message..." class="input-field"></textarea>
