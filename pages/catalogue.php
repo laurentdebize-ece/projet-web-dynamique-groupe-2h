@@ -10,44 +10,84 @@
 </head>
 <body>
 
-    <?php include('menu.php') ?>
+<?php include('menu.php') ?>
+<?php include('connexion_base.php') ?>
 
 
+<?php
+session_start();
 
+if (!isset($_SESSION['count'])) {
+    $_SESSION['count'] = 0;
+}
 
+?>
+    <?php $compteur_de_filtres = 0; ?>
 
 
 <?php
 if (!empty($_POST['prix_croissant'])) {
+    $compteur_de_filtres = $compteur_de_filtres + 1;
 }
 
 if (!empty($_POST['prix_decroissant'])) {
+    $compteur_de_filtres = $compteur_de_filtres + 1;
 }
 
 if (!empty($_POST['recent'])) {
+    $compteur_de_filtres = $compteur_de_filtres + 1;
 }
 
 if (!empty($_POST['ancien'])) {
-} ?>
+    $compteur_de_filtres = $compteur_de_filtres + 1;
+} 
+
+if (empty($_POST['num_page']) or $_POST['num_page'] == 0) {
+    $num_page = 0;
+} else {
+    $num_page = $_POST['num_page'];
+}
+
+$start = $num_page * 6;
+$count = $num_page * 6 + 6;
+
+if ($compteur_de_filtres == 0) {
+    $reponse = $bdd->query("SELECT img, prix, nomCarte, description_carte FROM Carte LIMIT $start, $count;");
+}
+
+$donnees = $reponse->fetch();
 
 
+if ($compteur_de_filtres == 1) {
+    if (!empty($_POST['prix_croissant'])){
+        $reponse = $bdd->query("SELECT img, nomCarte, description_carte FROM Carte ORDER BY prix DESC LIMIT $start, $count;");
+    }
+    if (!empty($_POST['prix_decroissant'])){
+        $reponse = $bdd->query("SELECT img, nomCarte, description_carte FROM Carte ORDER BY prix ASC LIMIT $start, $count;");
+    }
+    if (!empty($_POST['recent'])){
+        $reponse = $bdd->query("SELECT img, nomCarte, description_carte FROM Carte ORDER BY date_ajout ASC LIMIT $start, $count;");
+    }
+    if (!empty($_POST['ancien'])){
+        $reponse = $bdd->query("SELECT img, nomCarte, description_carte FROM Carte ORDER BY date_ajout DESC LIMIT $start, $count;");
+    }
+}
 
 
-
+?>
 
 <h1 class="produits_phares">
-    NOS PRODUITS PHARES
+    nos produits phares
 </h1>
 
 <div class="carroussel">
     Guillaume c'est ici faut que tu mette ton carrousel
 </div>
 
-
 <div id="catalogue">
     <div class="filtre_categorie">
         <div class="filtre">
-            <form method="post" action="catalogue.php" class="form">
+            <form method="post" action="" class="form">
                 <h3 id="titre_filtre">
                     FILTRES
                 </h3>
@@ -60,8 +100,6 @@ if (!empty($_POST['ancien'])) {
                 </h4> 
             </form>  
         </div>
-
-
         <div class="categorie">
             <h3 id="titre_categories">
                 CATEGORIES
@@ -78,61 +116,128 @@ if (!empty($_POST['ancien'])) {
     <div>
         <div id="premiere_ligne">
             <div class="produit_unitaire">
-                <img src="../assets/1.jpg" alt="Carte football">
+                <img src="<?php echo $donnees['img']; ?>" alt="Carte_1">
                 <div class="description">
-                    <h3>Offre football</h3>
-                    <p>Profitez d'une offre de réduction de 50% sur des cours de football auprès de nos partenaires.</p>
+                    <h3><?php echo $donnees['nomCarte']; ?></h3>
+                    <p> 
+                        <?php
+                        echo $donnees['description_carte']; 
+                        ?>
+                    </p>
                     <button class="bouton_en_savoir_plus">En savoir plus...</button>
                 </div>
             </div>
-            <div class="produit_unitaire">
-                <img src="../assets/2.jpg" alt="Carte football">
+
+            <?php 
+            $donnees = $reponse->fetch();
+            ?>   
+           
+           <div class="produit_unitaire">
+                <img src="<?php echo $donnees['img']; ?>" alt="Carte_2">
                 <div class="description">
-                    <h3>Offre football</h3>
-                    <p>Profitez d'une offre de réduction de 50% sur des cours de football auprès de nos partenaires.</p>
+                    <h3><?php echo $donnees['nomCarte']; ?></h3>
+                    <p> 
+                        <?php
+                        echo $donnees['description_carte']; 
+                        ?>
+                    </p>
                     <button class="bouton_en_savoir_plus">En savoir plus...</button>
                 </div>
             </div>
+            <?php 
+            $donnees = $reponse->fetch();
+            ?>      
             <div class="produit_unitaire">
-                <img src="../assets/3.jpg" alt="Carte football">
+                <img src="<?php echo $donnees['img']; ?>" alt="Carte_3">
                 <div class="description">
-                    <h3>Offre football</h3>
-                    <p>Profitez d'une offre de réduction de 50% sur des cours de football auprès de nos partenaires.</p>
+                    <h3><?php echo $donnees['nomCarte']; ?></h3>
+                    <p> 
+                        <?php
+                        echo $donnees['description_carte']; 
+                        ?>
+                    </p>
                     <button class="bouton_en_savoir_plus">En savoir plus...</button>
                 </div>
             </div>
         </div>
+        <?php 
+            $donnees = $reponse->fetch();
+        ?>   
         <div id="deuxieme_ligne">
-            <div class="produit_unitaire">
-                <img src="../assets/1.jpg" alt="Carte football">
+        <div class="produit_unitaire">
+                <img src="<?php echo $donnees['img']; ?>" alt="Carte_4">
                 <div class="description">
-                    <h3>Offre football</h3>
-                    <p>Profitez d'une offre de réduction de 50% sur des cours de football auprès de nos partenaires.</p>
+                    <h3><?php echo $donnees['nomCarte']; ?></h3>
+                    <p> 
+                        <?php
+                        echo $donnees['description_carte']; 
+                        ?>
+                    </p>
                     <button class="bouton_en_savoir_plus">En savoir plus...</button>
                 </div>
             </div>
+            <?php 
+            $donnees = $reponse->fetch();
+            ?>   
             <div class="produit_unitaire">
-                <img src="../assets/2.jpg" alt="Carte football">
+                <img src="<?php echo $donnees['img']; ?>" alt="Carte_5">
                 <div class="description">
-                    <h3>Offre football</h3>
-                    <p>Profitez d'une offre de réduction de 50% sur des cours de football auprès de nos partenaires.</p>
+                    <h3><?php echo $donnees['nomCarte']; ?></h3>
+                    <p> 
+                        <?php
+                        echo $donnees['description_carte']; 
+                        ?>
+                    </p>
                     <button class="bouton_en_savoir_plus">En savoir plus...</button>
                 </div>
             </div>
+            <?php 
+            $donnees = $reponse->fetch();
+            ?>   
             <div class="produit_unitaire">
-                <img src="../assets/3.jpg" alt="Carte football">
+                <img src="<?php echo $donnees['img']; ?>" alt="Carte_6">
                 <div class="description">
-                    <h3>Offre football</h3>
-                    <p>Profitez d'une offre de réduction de 50% sur des cours de football auprès de nos partenaires.</p>
+                    <h3><?php echo $donnees['nomCarte']; ?></h3>
+                    <p> 
+                        <?php
+                        echo $donnees['description_carte']; 
+                        ?>
+                    </p>
                     <button class="bouton_en_savoir_plus">En savoir plus...</button>
                 </div>
             </div>
         </div>
+        
         <div id="prev_next">
-            <div id="precedent">
+            <div id="page_precedente">
+                <form method="POST" action="">
+                    <button type="submit" name="decrement">
+                        <img src="../assets/arrow.svg" alt="Flèche" style="width: 33px;">
+                        Précédent
+                    </button>
+                </form>
+                <?php
+                if (isset($_POST['increment'])) {
+                    $_SESSION['count']++;
+                }
+                ?>
             </div>
-            <div id="numero"></div>
-            <div id="suivant">
+            <div id="numero">
+                <?php
+                echo $_SESSION['count'];
+                ?>
+            </div>
+            <div id="page_suivante">
+                <form method="POST" action="">
+                    <button type="submit" name="increment">
+                        <img src="../assets/arrow.svg" alt="Flèche" style="transform: scaleX(-1); width: 33px;">
+                        Suivant
+                    </button>
+                </form>
+                <?php
+                if (isset($_POST['decrement']) && $_SESSION['count'] > 0) {
+                    $_SESSION['count']--;
+                } ?>
             </div>
         </div>
     </div>

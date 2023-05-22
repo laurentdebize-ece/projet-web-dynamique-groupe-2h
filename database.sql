@@ -68,10 +68,10 @@ VALUES (NULL, 'Reinert', 'Aurélien', MD5('whleutwc'), 'aurelien.reinert@edu.ece
 
 INSERT INTO Carte
 VALUES (NULL, '2023-05-21', 'decathlon', 25, 'football', "Profitez d'une réduction de 50% sur des cours de football auprès de nos partenaires.", "../assets/1.jpg", "exterieur, découverte"),
-(NULL, '2023/02/12', 'decathlon', 25, 'velo', "Visitez la magnifique région qu'est le Parc du Pilat en famille. Location de matériel inclus.", "../assets/velo.jpg", "exterieur, découverte, en famille"),
+(NULL, '2023/02/12', 'decathlon', 25, 'velo', "Visitez la magnifique région qu'est le Parc du Pilat en famille. Location de matériel inclus.", "../assets/veloo.jpg", "exterieur, découverte, en famille"),
 (NULL, '2022/05/10', 'Lyon métropole', 10, 'piscine', "Profitez d'une réduction de 50% sur les forfaits mensuel d'entrainement d'aquabike, d'aquadanse, d'aquagym et d'aquarunning dans une piscine municipale.", "../assets/3.jpg", "interieur, découverte"),
 (NULL, '2022/10/11', 'Val Thorens', 375, 'ski', "Profitez d'un forfait saisonnier à prix réduit !", "../assets/2.jpg", "exterieur, sensation forte"),
-(NULL, '2022/07/01', 'Mc Donald', 2, 'repas', "Profitez de 90% de réduction sur votre prochaine note.", "../assets/macdo.jpg", "interieur");
+(NULL, '2022/07/01', 'Mc Donald', 2, 'repas', "Profitez de 90% de réduction sur votre prochaine note.", "../assets/mcdo.jpg", "interieur");
 
 
 COMMIT;
