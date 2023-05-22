@@ -126,7 +126,7 @@ if ($compteur_de_filtres == 1) {
     </div>
 
     <h1 class="produits_phares">
-        CATALOGUE ...
+        notre catalogue ...
     </h1>
 
     <div id="catalogue">
@@ -163,64 +163,99 @@ if ($compteur_de_filtres == 1) {
             </div>
         </div>
         <div>
-            <div id="premiere_ligne">
-                <div class="produit_unitaire">
-                    <img src="../assets/1.jpg" alt="Carte football">
-                    <div class="description">
-                        <h3>Offre football</h3>
-                        <p>Profitez d'une offre de réduction de 50% sur des cours de football auprès de nos partenaires.
-                        </p>
-                        <button class="bouton_en_savoir_plus">En savoir plus...</button>
-                    </div>
-                </div>
-                <div class="produit_unitaire">
-                    <img src="../assets/2.jpg" alt="Carte football">
-                    <div class="description">
-                        <h3>Offre football</h3>
-                        <p>Profitez d'une offre de réduction de 50% sur des cours de football auprès de nos partenaires.
-                        </p>
-                        <button class="bouton_en_savoir_plus">En savoir plus...</button>
-                    </div>
-                </div>
-                <div class="produit_unitaire">
-                    <img src="../assets/3.jpg" alt="Carte football">
-                    <div class="description">
-                        <h3>Offre football</h3>
-                        <p>Profitez d'une offre de réduction de 50% sur des cours de football auprès de nos partenaires.
-                        </p>
-                        <button class="bouton_en_savoir_plus">En savoir plus...</button>
-                    </div>
+        <div id="premiere_ligne">
+            <div class="produit_unitaire">
+                <img src="<?php echo $donnees['img']; ?>" alt="Carte_1">
+                <div class="description">
+                    <h3><?php echo $donnees['nomCarte']; ?></h3>
+                    <p>
+                        <?php
+                        echo $donnees['description_carte'];
+                        ?>
+                    </p>
+                    <button class="bouton_en_savoir_plus">En savoir plus...</button>
                 </div>
             </div>
-            <div id="deuxieme_ligne">
-                <div class="produit_unitaire">
-                    <img src="../assets/1.jpg" alt="Carte football">
-                    <div class="description">
-                        <h3>Offre football</h3>
-                        <p>Profitez d'une offre de réduction de 50% sur des cours de football auprès de nos partenaires.
-                        </p>
-                        <button class="bouton_en_savoir_plus">En savoir plus...</button>
-                    </div>
-                </div>
-                <div class="produit_unitaire">
-                    <img src="../assets/2.jpg" alt="Carte football">
-                    <div class="description">
-                        <h3>Offre football</h3>
-                        <p>Profitez d'une offre de réduction de 50% sur des cours de football auprès de nos partenaires.
-                        </p>
-                        <button class="bouton_en_savoir_plus">En savoir plus...</button>
-                    </div>
-                </div>
-                <div class="produit_unitaire">
-                    <img src="../assets/3.jpg" alt="Carte football">
-                    <div class="description">
-                        <h3>Offre football</h3>
-                        <p>Profitez d'une offre de réduction de 50% sur des cours de football auprès de nos partenaires.
-                        </p>
-                        <button class="bouton_en_savoir_plus">En savoir plus...</button>
-                    </div>
+
+            <?php
+            $donnees = $reponse->fetch();
+            ?>
+
+            <div class="produit_unitaire">
+                <img src="<?php echo $donnees['img']; ?>" alt="Carte_2">
+                <div class="description">
+                    <h3><?php echo $donnees['nomCarte']; ?></h3>
+                    <p>
+                        <?php
+                        echo $donnees['description_carte'];
+                        ?>
+                    </p>
+                    <button class="bouton_en_savoir_plus">En savoir plus...</button>
                 </div>
             </div>
+            <?php
+            $donnees = $reponse->fetch();
+            ?>
+            <div class="produit_unitaire">
+                <img src="<?php echo $donnees['img']; ?>" alt="Carte_3">
+                <div class="description">
+                    <h3><?php echo $donnees['nomCarte']; ?></h3>
+                    <p>
+                        <?php
+                        echo $donnees['description_carte'];
+                        ?>
+                    </p>
+                    <button class="bouton_en_savoir_plus">En savoir plus...</button>
+                </div>
+            </div>
+        </div>
+        <?php
+        $donnees = $reponse->fetch();
+        ?>
+        <div id="deuxieme_ligne">
+            <div class="produit_unitaire">
+                <img src="<?php echo $donnees['img']; ?>" alt="Carte_4">
+                <div class="description">
+                    <h3><?php echo $donnees['nomCarte']; ?></h3>
+                    <p>
+                        <?php
+                        echo $donnees['description_carte'];
+                        ?>
+                    </p>
+                    <button class="bouton_en_savoir_plus">En savoir plus...</button>
+                </div>
+            </div>
+            <?php
+            $donnees = $reponse->fetch();
+            ?>
+            <div class="produit_unitaire">
+                <img src="<?php echo $donnees['img']; ?>" alt="Carte_5">
+                <div class="description">
+                    <h3><?php echo $donnees['nomCarte']; ?></h3>
+                    <p>
+                        <?php
+                        echo $donnees['description_carte'];
+                        ?>
+                    </p>
+                    <button class="bouton_en_savoir_plus">En savoir plus...</button>
+                </div>
+            </div>
+            <?php
+            $donnees = $reponse->fetch();
+            ?>
+            <div class="produit_unitaire">
+                <img src="<?php echo $donnees['img']; ?>" alt="Carte_6">
+                <div class="description">
+                    <h3><?php echo $donnees['nomCarte']; ?></h3>
+                    <p>
+                        <?php
+                        echo $donnees['description_carte'];
+                        ?>
+                    </p>
+                    <button class="bouton_en_savoir_plus">En savoir plus...</button>
+                </div>
+            </div>
+        </div>
             <div id="prev_next">
                 <div id="precedent">
                 </div>
