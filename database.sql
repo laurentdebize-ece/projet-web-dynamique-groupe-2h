@@ -21,26 +21,27 @@ CREATE TABLE Domaine
 
 CREATE TABLE Users
 (
-    id       int PRIMARY KEY AUTO_INCREMENT,
-    nom      varchar(20) NOT NULL,
-    prenom   varchar(20) NOT NULL,
+    id           int PRIMARY KEY AUTO_INCREMENT,
+    nom          varchar(20) NOT NULL,
+    prenom       varchar(20) NOT NULL,
     mot_de_passe varchar(32) NOT NULL,
-    email    varchar(50) NOT NULL,
-    phone    varchar(10) NOT NULL,
-    statut   int         NOT NULL,
-    domaine  int
+    email        varchar(50) NOT NULL,
+    phone        varchar(10) NOT NULL,
+    statut       int         NOT NULL,
+    domaine      int
 );
 
 
 CREATE TABLE Carte
 (
-    id          int PRIMARY KEY AUTO_INCREMENT,
-    partenaire  int,
-    prix        int,
-    nomCarte    varchar(50),
-    description_carte varchar(100),
-    img  varchar(50),
-    mots_clefs  varchar(100)
+    id                int PRIMARY KEY AUTO_INCREMENT,
+    date_ajout        date,
+    partenaire        varchar(25),
+    prix              int,
+    nomCarte          varchar(50),
+    description_carte varchar(200),
+    img               varchar(50),
+    mots_clefs        varchar(100)
 );
 
 CREATE TABLE Achat
@@ -60,10 +61,6 @@ INSERT INTO statut
 VALUES (NULL, 'Partenaire');
 
 INSERT INTO Users
-VALUES (NULL, 'Reinert', 'Aurélien', MD5('whleutwc'), 'aurelien.reinert@edu.ece.fr', '0670987563', 1, NULL),
-(NULL, 'Duvanel', 'Louis', 'duvlouis', 'louis.duvanel@edu.ece.fr', '0782656509', 1, NULL),
-(NULL, 'Balsalobre', 'Thomas', 'thm', 'thomas.balsalobre@edu.ece.fr', '678997989', 3, NULL);
-INSERT INTO Users
-
+VALUES (NULL, 'Reinert', 'Aurélien', MD5('whleutwc'), 'aurelien.reinert@edu.ece.fr', '0670987563', 1, NULL);
 
 COMMIT;

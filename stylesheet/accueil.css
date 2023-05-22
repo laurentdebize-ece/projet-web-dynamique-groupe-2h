@@ -33,14 +33,11 @@ body {
     flex-direction: column;
     justify-content: space-evenly;
     transition: all 0.5s;
+    padding: 0 20px;
 }
 
 .img-container:hover .img-description {
     bottom: 0;
-}
-
-.img-description {
-    padding: 0 15px;
 }
 
 .img-description h3 {

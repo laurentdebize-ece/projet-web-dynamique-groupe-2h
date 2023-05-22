@@ -19,7 +19,7 @@ session_start();
 
 <body>
     <?php
-
+    
     include('menu.php');
 
     function statut_choix()
