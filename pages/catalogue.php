@@ -79,7 +79,7 @@ if ($compteur_de_filtres == 1) {
 ?>
 
 <h1 class="produits_phares">
-    nos produits phares
+    nos produits phares ...
 </h1>
 
     <div class="carroussel">
@@ -136,15 +136,22 @@ if ($compteur_de_filtres == 1) {
                     <h3 id="titre_filtre">
                         FILTRES
                     </h3>
-                    <label><input type="checkbox" name="prix_croissant" value="prix_croissant" <?php if (!empty($_POST['prix_croissant'])) { ?> checked <?php } ?>> Prix croissant</label> <br>
-                    <label><input type="checkbox" name="prix_decroissant" value="prix_decroissant" <?php if (!empty($_POST['prix_decroissant'])) { ?> checked <?php } ?>> Prix décroissant</label> <br>
-                    <label><input type="checkbox" name="recent" value="recent" <?php if (!empty($_POST['recent'])) { ?>
-                                checked <?php } ?>> Récent</label> <br>
-                    <label><input type="checkbox" name="ancien" value="ancien" <?php if (!empty($_POST['ancien'])) { ?>
-                                checked <?php } ?>> Ancien</label> <br>
-                    <h4 id="appliquer_filtre">
-                        <input type="submit" id="appliquer" value="Appliquer">
-                    </h4>
+                    
+                    
+                        <input type="radio" name="filtre" value="prix_croissant" <?php if (!empty($_POST['prix_croissant'])) { ?> checked <?php } ?>>
+                    <label for="prix_croissant">Prix Croissant</label><br>
+
+                    <input type="radio" name="filtre" value="prix_decroissant" <?php if (!empty($_POST['prix_decroissant'])) { ?> checked <?php } ?>>
+                    <label for="prix_decroissant">Prix Décroissant</label><br>
+
+                    <input type="radio" name="filtre" value="recent" <?php if (!empty($_POST['recent'])) { ?> checked <?php } ?>>
+                    <label for="recent">Récent</label><br>
+
+                    <input type="radio" name="filtre" value="ancien" <?php if (!empty($_POST['ancien'])) { ?> checked <?php } ?>>
+                    <label for="ancien">Ancien</label><br>
+
+                    <input type="submit" id="appliquer" value="Appliquer" class="filtreSubmit">
+                
                 </form>
             </div>
 
@@ -154,35 +161,39 @@ if ($compteur_de_filtres == 1) {
                     CATEGORIES
                 </h3>
                 <ul>
-                    <li>Interieur</li>
-                    <li>Exterieur</li>
-                    <li>Sensation</li>
-                    <li>En famille</li>
-                    <li>Découverte</li>
+                    <li><input type="button" class="buttonCat" value="Interieur"></li>
+                    <div class="barCategorie"></div>
+                    <li><input type="button" class="buttonCat" value="Exterieur"></li>
+                    <div class="barCategorie"></div>
+                    <li><input type="button" class="buttonCat" value="Sensation"></li>
+                    <div class="barCategorie"></div>
+                    <li><input type="button" class="buttonCat" value="En famille"></li>
+                    <div class="barCategorie"></div>
+                    <li><input type="button" class="buttonCat" value="Découverte"></li>
                 </ul>
             </div>
         </div>
-        <div>
-        <div id="premiere_ligne">
-            <div class="produit_unitaire">
-                <img src="<?php echo $donnees['img']; ?>" alt="Carte_1">
-                <div class="description">
-                    <h3><?php echo $donnees['nomCarte']; ?></h3>
-                    <p>
-                        <?php
-                        echo $donnees['description_carte'];
-                        ?>
-                    </p>
-                    <form action="catalogue_en_savoir_plus.php" method="get">
-                        <input type="hidden" name="id" value="<?php echo $donnees['id']; ?>">
-                        <button class="bouton_en_savoir_plus" type="submit">En savoir plus</button>
-                    </form>
+        <div class="catalogue">
+            <div id="premiere_ligne">
+                <div class="produit_unitaire">
+                    <img src="<?php echo $donnees['img']; ?>" alt="Carte_1">
+                    <div class="description">
+                        <h3><?php echo $donnees['nomCarte']; ?></h3>
+                        <p>
+                            <?php
+                            echo $donnees['description_carte'];
+                            ?>
+                        </p>
+                        <form action="catalogue_en_savoir_plus.php" method="get">
+                            <input type="hidden" name="id" value="<?php echo $donnees['id']; ?>">
+                            <button class="bouton_en_savoir_plus" type="submit">En savoir plus</button>
+                        </form>
+                    </div>
                 </div>
-            </div>
 
-            <?php
-            $donnees = $reponse->fetch();
-            ?>
+                <?php
+                $donnees = $reponse->fetch();
+                ?>
 
             <div class="produit_unitaire">
                 <img src="<?php echo $donnees['img']; ?>" alt="Carte_2">
