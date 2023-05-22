@@ -193,7 +193,10 @@ if ($compteur_de_filtres == 1) {
                         echo $donnees['description_carte'];
                         ?>
                     </p>
-                    <button class="bouton_en_savoir_plus">En savoir plus...</button>
+                    <form action="catalogue_en_savoir_plus.php" method="get">
+                        <input type="hidden" name="id" value="<?php echo $donnees['id']; ?>">
+                        <button class="bouton_en_savoir_plus" type="submit">En savoir plus</button>
+                    </form>
                 </div>
             </div>
             <?php
@@ -208,7 +211,10 @@ if ($compteur_de_filtres == 1) {
                         echo $donnees['description_carte'];
                         ?>
                     </p>
-                    <button class="bouton_en_savoir_plus">En savoir plus...</button>
+                    <form action="catalogue_en_savoir_plus.php" method="get">
+                        <input type="hidden" name="id" value="<?php echo $donnees['id']; ?>">
+                        <button class="bouton_en_savoir_plus" type="submit">En savoir plus</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -225,7 +231,10 @@ if ($compteur_de_filtres == 1) {
                         echo $donnees['description_carte'];
                         ?>
                     </p>
-                    <button class="bouton_en_savoir_plus">En savoir plus...</button>
+                    <form action="catalogue_en_savoir_plus.php" method="get">
+                        <input type="hidden" name="id" value="<?php echo $donnees['id']; ?>">
+                        <button class="bouton_en_savoir_plus" type="submit">En savoir plus</button>
+                    </form>
                 </div>
             </div>
             <?php
@@ -240,7 +249,10 @@ if ($compteur_de_filtres == 1) {
                         echo $donnees['description_carte'];
                         ?>
                     </p>
-                    <button class="bouton_en_savoir_plus">En savoir plus...</button>
+                    <form action="catalogue_en_savoir_plus.php" method="get">
+                        <input type="hidden" name="id" value="<?php echo $donnees['id']; ?>">
+                        <button class="bouton_en_savoir_plus" type="submit">En savoir plus</button>
+                    </form>
                 </div>
             </div>
             <?php
@@ -255,7 +267,10 @@ if ($compteur_de_filtres == 1) {
                         echo $donnees['description_carte'];
                         ?>
                     </p>
-                    <button class="bouton_en_savoir_plus">En savoir plus...</button>
+                    <form action="catalogue_en_savoir_plus.php" method="get">
+                        <input type="hidden" name="id" value="<?php echo $donnees['id']; ?>">
+                        <button class="bouton_en_savoir_plus" type="submit">En savoir plus</button>
+                    </form>
                 </div>
             </div>
         </div>
