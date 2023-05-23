@@ -44,7 +44,7 @@ function supprimerCarte($idCarte)
         $tmp["prixCarte"] = array();
         $tmp["imgCarte"] = array();
 
-        for ($i = 0; $i < count($_SESSION["panier"]["idCarte"]) - 1; $i++) {
+        for ($i = 0; $i < count($_SESSION["panier"]["idCarte"]); $i++) {
             if ($_SESSION["panier"]["idCarte"][$i] !== $idCarte) {
                 array_push($tmp["idCarte"], $_SESSION["panier"]["idCarte"][$i]);
                 array_push($tmp["qteCarte"], $_SESSION["panier"]["qteCarte"][$i]);

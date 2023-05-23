@@ -19,7 +19,9 @@
     $requete->execute([$id]);
     $donnees = $requete->fetch();
 
-    ajouterCarte($_POST["idCarte"], $_POST["qteCarte"], $donnees["prix"], $donnees["nomCarte"], $donnees["img"]);
+    if (isset($_POST["idCarte"])) {
+        ajouterCarte($_POST["idCarte"], $_POST["qteCarte"], $donnees["prix"], $donnees["nomCarte"], $donnees["img"]);
+    }
 
     if (isset($_POST["remove"])) {
         supprimerCarte($_POST["remove"]);
@@ -35,7 +37,6 @@
             for ($i = 0; $i < $nbCartes; $i++) {
                 echo "<div class='element-panier'>";
                 echo "<img src='" . $_SESSION["panier"]["imgCarte"][$i] . "'>";
-                echo "<p>ID : " . $_SESSION["panier"]["idCarte"][$i] . "</p>";
                 echo "<p>Nom de la carte : " . $_SESSION["panier"]["nomCarte"][$i] . "</p>";
                 echo "<p> Quantite : " . $_SESSION["panier"]["qteCarte"][$i] . "</p>";
                 echo "<p>Prix unitaire : " . $_SESSION["panier"]["prixCarte"][$i] . " €</p>";
