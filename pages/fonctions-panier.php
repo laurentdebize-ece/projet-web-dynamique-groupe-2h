@@ -9,12 +9,13 @@ function creationPanier()
         $_SESSION["panier"]["nomCarte"] = array();
         $_SESSION["panier"]["qteCarte"] = array();
         $_SESSION["panier"]["prixCarte"] = array();
+        $_SESSION["panier"]["imgCarte"] = array();
     }
     return true;
 }
 
 // Fonction pour ajouter une carte au panier
-function ajouterCarte($idCarte, $qteCarte, $prixCarte, $nomCarte)
+function ajouterCarte($idCarte, $qteCarte, $prixCarte, $nomCarte, $imgCarte)
 {
     if (creationPanier()) {
         $positionCarte = array_search($idCarte, $_SESSION["panier"]["idCarte"]);
@@ -25,6 +26,7 @@ function ajouterCarte($idCarte, $qteCarte, $prixCarte, $nomCarte)
             array_push($_SESSION["panier"]["nomCarte"], $nomCarte);
             array_push($_SESSION["panier"]["qteCarte"], $qteCarte);
             array_push($_SESSION["panier"]["prixCarte"], $prixCarte);
+            array_push($_SESSION["panier"]["imgCarte"], $imgCarte);
         }
     } else {
         echo "Erreur";
@@ -48,6 +50,7 @@ function supprimerCarte($idCarte)
                 array_push($tmp["qteCarte"], $_SESSION["panier"]["qteProduit"][$i]);
                 array_push($tmp["prixCarte"], $_SESSION["panier"]["prixCarte"][$i]);
                 array_push($tmp["nomCarte"], $_SESSION["panier"]["nomCarte"][$i]);
+                array_push($tmp["nomCarte"], $_SESSION["panier"]["imgCarte"][$i]);
             }
         }
         $_SESSION["panier"] = $tmp;

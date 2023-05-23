@@ -5,6 +5,8 @@
     <title>Mon panier</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../stylesheet/main.css">
+    <link rel="stylesheet" href="../stylesheet/panier.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <?php
@@ -16,24 +18,29 @@
     $requete->execute([$id]);
     $donnees = $requete->fetch();
 
-    ajouterCarte($_POST["idCarte"], $_POST["qteCarte"], $donnees["prix"], $donnees["nomCarte"]);
-    echo $donnees["nomCarte"];
+    ajouterCarte($_POST["idCarte"], $_POST["qteCarte"], $donnees["prix"], $donnees["nomCarte"], $donnees["img"]);
 
     if (creationPanier()) {
         $nbCartes = count($_SESSION["panier"]["idCarte"]);
-        echo $nbCartes;
+        echo "<div class='panier'>";
+        echo "<p class='intro-panier'>Vous avez " . $nbCartes . " éléments dans le panier.</p>";
         if ($nbCartes <= 0) {
-            echo "<p>Votre panier est vide</p>";
+            echo "<p class='intro-panier'>Votre panier est vide</p>";
         } else {
-            echo "<ul>";
             for ($i = 0; $i < $nbCartes; $i++) {
-                echo "<li>";
-                echo $_SESSION["panier"]["nomCarte"][$i];
-                echo "</li>";
+                echo "<div class='element-panier'>";
+                echo "<img src='" . $_SESSION["panier"]["imgCarte"][$i] . "'>";
+                echo "<p>Nom de la carte : " . $_SESSION["panier"]["nomCarte"][$i] . "</p>";
+                echo "<p> Quantite : " . $_SESSION["panier"]["qteCarte"][$i] . "</p>";
+                echo "<p>Prix unitaire : " . $_SESSION["panier"]["prixCarte"][$i] . " €</p>";
+                echo "</div>";
             }
-            echo "</ul>";
+            echo "<p class='total'>Montant total : " . montantGlobal() . " €</p>";
+            echo "<button class='valider-panier'>Valider la commande</button>";
         }
+        echo "</div>";
     }
+    include("footer.php");
     ?>
     <script src="../javascript/menu.js"></script>
 </body>
