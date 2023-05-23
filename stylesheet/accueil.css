@@ -2,6 +2,13 @@ body {
     background-color: #F9F0F1;
 }
 
+.acceuil {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: calc(100vh - 100px - 98.667px);
+}
+
 .actu-container {
     display: flex;
     justify-content: space-between;
