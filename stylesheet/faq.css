@@ -5,6 +5,11 @@
 
 .question-details {
     background-color: transparent;
+    transition: height .5s ease-in-out;
+}
+
+details {
+    transition: height 0.3s ease;
 }
 
 .question-details summary {
@@ -24,6 +29,7 @@
     background-color: #E8E8E8;
     display: flex;
     justify-content: center;
+    transition: rotate .5s ease-in-out;
 }
 
 .question-details[open] summary i {
