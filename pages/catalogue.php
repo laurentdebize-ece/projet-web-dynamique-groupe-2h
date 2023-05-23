@@ -309,8 +309,8 @@ $donnees = $reponse->fetch();
     </div>
     <div class="catalogue">
         <div id="premiere_ligne">
+            <?php if (!empty($donnees)) { ?>
             <div class="produit_unitaire">
-
                 <img src="<?php echo $donnees['img']; ?>" alt="Carte_1">
                 <div class="description">
                     <h3><?php echo $donnees['nomCarte']; ?></h3>
@@ -325,12 +325,12 @@ $donnees = $reponse->fetch();
                     </form>
                 </div>
             </div>
-
+            <?php } ?>
             <?php
             $donnees = $reponse->fetch();
             ?>
-
-                <div class="produit_unitaire">
+            <?php if (!empty($donnees)) { ?>
+            <div class="produit_unitaire">
 
                 <img src="<?php echo $donnees['img']; ?>" alt="Carte_2">
                 <div class="description">
@@ -347,9 +347,11 @@ $donnees = $reponse->fetch();
                 </div>
 
             </div>
+            <?php } ?>
             <?php
             $donnees = $reponse->fetch();
             ?>
+            <?php if (!empty($donnees)) { ?>
             <div class="produit_unitaire">
                 <img src="<?php echo $donnees['img']; ?>" alt="Carte_3">
                 <div class="description">
@@ -365,11 +367,13 @@ $donnees = $reponse->fetch();
                     </form>
                 </div>
             </div>
+            <?php } ?>
         </div>
         <?php
         $donnees = $reponse->fetch();
         ?>
         <div id="deuxieme_ligne">
+        <?php if (!empty($donnees)) { ?>
             <div class="produit_unitaire">
                 <img src="<?php echo $donnees['img']; ?>" alt="Carte_4">
                 <div class="description">
@@ -385,9 +389,11 @@ $donnees = $reponse->fetch();
                     </form>
                 </div>
             </div>
+            <?php } ?>
             <?php
             $donnees = $reponse->fetch();
             ?>
+            <?php if (!empty($donnees)) { ?>
             <div class="produit_unitaire">
                 <img src="<?php echo $donnees['img']; ?>" alt="Carte_5">
                 <div class="description">
@@ -403,9 +409,10 @@ $donnees = $reponse->fetch();
                     </form>
                 </div>
             </div>
-            <?php
+            <?php } 
             $donnees = $reponse->fetch();
             ?>
+            <?php if (!empty($donnees)) { ?>
             <div class="produit_unitaire">
 
                 <img src="<?php echo $donnees['img']; ?>" alt="Carte_6">
@@ -423,6 +430,7 @@ $donnees = $reponse->fetch();
                 </div>
 
             </div>
+            <?php } ?>
         </div>
         <?php
         while ($nbr > 0) {
