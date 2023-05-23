@@ -20,7 +20,7 @@
                     </div>
                 </form>
             </li>
-            <li id="account-button"><a href=""><img src="../assets/account.svg" alt="Mon compte" id="compte_img"></a></li>
+            <li id="account-button"><a href="compte.php"><img src="../assets/account.svg" alt="Mon compte" id="compte_img"></a></li>
             <li><a href="panier.php"><img src="../assets/cart.svg" alt="Mon panier" id="panier-button"></a></li>
         </ul>
         <div class="login-popup">
