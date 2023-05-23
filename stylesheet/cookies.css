@@ -23,7 +23,7 @@
     width: 200px;
     top: 0;
     left: 10%;
-    animation: animX 2.5s linear 0s infinite alternate, animY 4s linear 0s infinite alternate;
+    animation: animX 4.5s linear 0s infinite alternate, animY 6s linear 0s infinite alternate;
 }
 
 @keyframes animX {
