@@ -30,6 +30,7 @@
                         <?php
                             include("settings_uti_traitement_bis.php");
                         ?>
+                        <input type="button" value="Déconnexion" id="log-out">
                     </div>
                 </div>
             </div>

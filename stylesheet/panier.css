@@ -1,7 +1,9 @@
 .panier {
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
-    width: 100%;
+    padding: 5% 15%;
     min-height: calc(100vh - 100px - 98.667px);
 }
 
