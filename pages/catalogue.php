@@ -347,8 +347,7 @@ $donnees = $reponse->fetch();
                 </div>
 
             </div>
-            <?php } ?>
-            <?php
+            <?php } ;
             $donnees = $reponse->fetch();
             ?>
             <?php if (!empty($donnees)) { ?>
