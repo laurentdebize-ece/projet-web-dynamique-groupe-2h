@@ -44,7 +44,7 @@ $donnees = $requete->fetch();
                 </p>
                 <form method="POST" action="panier.php" class="forme">
                     <input type="hidden" name="idCarte" value="<?php echo $donnees['id']; ?>">
-                    <input type="number" name="qteCarte" value="1">
+                    <input type="number" name="qteCarte" value="1" min="1">
                     <input type="submit" class="appliquer" value="Ajouter au panier">
                 </form>
             </div>

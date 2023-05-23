@@ -53,27 +53,23 @@ if (empty($_POST['num_page']) or $_POST['num_page'] == 0) {
 $start = $num_page * 6;
 $count = $num_page * 6 + 6;
 
-if ($compteur_de_filtres == 0) {
-    $reponse = $bdd->query("SELECT id, img, prix, nomCarte, description_carte FROM Carte LIMIT $start, $count;");
-}
 
-$donnees = $reponse->fetch();
+// requete carroussel :
+
+$reponse = $bdd->query("SELECT id, img, prix, nomCarte, description_carte FROM Carte LIMIT 4;");
+
+$reponse_carroussel = $reponse->fetch();
+$img_1 = $reponse_carroussel['img'];
+$reponse_carroussel = $reponse->fetch();
+$img_2 = $reponse_carroussel['img'];
+$reponse_carroussel = $reponse->fetch();
+$img_3 = $reponse_carroussel['img'];
+$reponse_carroussel = $reponse->fetch();
+$img_4 = $reponse_carroussel['img'];
 
 
-if ($compteur_de_filtres == 1) {
-    if (!empty($_POST['prix_croissant'])){
-        $reponse = $bdd->query("SELECT id, img, nomCarte, description_carte FROM Carte ORDER BY prix DESC LIMIT $start, $count;");
-    }
-    if (!empty($_POST['prix_decroissant'])){
-        $reponse = $bdd->query("SELECT id, img, nomCarte, description_carte FROM Carte ORDER BY prix ASC LIMIT $start, $count;");
-    }
-    if (!empty($_POST['recent'])){
-        $reponse = $bdd->query("SELECT id, img, nomCarte, description_carte FROM Carte ORDER BY date_ajout ASC LIMIT $start, $count;");
-    }
-    if (!empty($_POST['ancien'])){
-        $reponse = $bdd->query("SELECT id, img, nomCarte, description_carte FROM Carte ORDER BY date_ajout DESC LIMIT $start, $count;");
-    }
-}
+// requete pour compter le nbr de pages necessaires :
+
 
 
 ?>
@@ -89,41 +85,79 @@ if ($compteur_de_filtres == 1) {
                 <div class="degrade2"></div>
                 <div class="slide-track">
                     <div class="slide">
-                        <img src="../assets/1.jpg" alt="Carte football">
+                        <img src="<?php echo $img_1; ?>" alt="Carte1">
                     </div>
+                    <?php $reponse_carroussel = $reponse->fetch(); ?>
                     <div class="slide">
-                        <img src="../assets/3.jpg" alt="Carte football">
+                        <img src="<?php echo $img_2; ?>" alt="Carte2">
                     </div>
+                    <?php $reponse_carroussel = $reponse->fetch(); ?>
                     <div class="slide">
-                        <img src="../assets/1.jpg" alt="Carte football">
+                        <img src="<?php echo $img_3; ?>" alt="Carte3">
                     </div>
+                    <?php $reponse_carroussel = $reponse->fetch(); ?>
                     <div class="slide">
-                        <img src="../assets/2.jpg" alt="Carte football">
+                        <img src="<?php echo $img_4; ?>" alt="Carte4">
                     </div>
+                    <?php $reponse_carroussel = $reponse->fetch(); ?>
                     <div class="slide">
-                        <img src="../assets/2.jpg" alt="Carte football">
+                        <img src="<?php echo $img_1; ?>" alt="Carte1">
                     </div>
-
-
+                    <?php $reponse_carroussel = $reponse->fetch(); ?>
                     <div class="slide">
-                        <img src="../assets/1.jpg" alt="Carte football">
+                        <img src="<?php echo $img_2; ?>" alt="Carte2">
                     </div>
+                    <?php $reponse_carroussel = $reponse->fetch(); ?>
                     <div class="slide">
-                        <img src="../assets/3.jpg" alt="Carte football">
+                        <img src="<?php echo $img_3; ?>" alt="Carte3">
                     </div>
+                    <?php $reponse_carroussel = $reponse->fetch(); ?>
                     <div class="slide">
-                        <img src="../assets/1.jpg" alt="Carte football">
+                        <img src="<?php echo $img_1; ?>" alt="Carte1">
                     </div>
+                    <?php $reponse_carroussel = $reponse->fetch(); ?>
                     <div class="slide">
-                        <img src="../assets/2.jpg" alt="Carte football">
+                        <img src="<?php echo $img_2; ?>" alt="Carte2">
                     </div>
+                    <?php $reponse_carroussel = $reponse->fetch(); ?>
                     <div class="slide">
-                        <img src="../assets/2.jpg" alt="Carte football">
+                        <img src="<?php echo $img_3; ?>" alt="Carte3">
                     </div>
                 </div>
             </div>
         </section>
     </div>
+
+    <?php
+
+        if(empty($_POST['interieur']) && empty($_POST['exterieur']) && empty($_POST['sensation']) && empty($_POST['famille']) && empty($_POST['decouverte'])) {
+            if ($compteur_de_filtres == 0) {
+                $reponse = $bdd->query("SELECT id, img, prix, nomCarte, description_carte FROM Carte LIMIT $start, $count;");
+                $nbr = $bdd->query("SELECT count(*) FROM Carte;");
+            }
+            $donnees = $reponse->fetch();
+            if ($compteur_de_filtres == 1) {
+                $nbr = $bdd->query("SELECT count(*) FROM Carte;");
+                if (!empty($_POST['prix_croissant'])){
+                    $reponse = $bdd->query("SELECT id, img, nomCarte, description_carte FROM Carte ORDER BY prix DESC LIMIT $start, $count;");
+                }
+                if (!empty($_POST['prix_decroissant'])){
+                    $reponse = $bdd->query("SELECT id, img, nomCarte, description_carte FROM Carte ORDER BY prix ASC LIMIT $start, $count;");
+                }
+                if (!empty($_POST['recent'])){
+                    $reponse = $bdd->query("SELECT id, img, nomCarte, description_carte FROM Carte ORDER BY date_ajout ASC LIMIT $start, $count;");
+                }
+                if (!empty($_POST['ancien'])){
+                    $reponse = $bdd->query("SELECT id, img, nomCarte, description_carte FROM Carte ORDER BY date_ajout DESC LIMIT $start, $count;");
+                }
+            }
+        } else if (!empty($_POST['interieur'])) {
+
+        } else if (!empty($_POST['exterieur'])) {}
+        else if (!empty($_POST['sensation'])) {}
+    
+    ?>
+
 
     <h1 class="produits_phares">
         notre catalogue ...
@@ -161,15 +195,35 @@ if ($compteur_de_filtres == 1) {
                     CATEGORIES
                 </h3>
                 <ul>
-                    <li><input type="button" class="buttonCat" value="Interieur"></li>
+                    <li>
+                        <form action="" method="post">
+                            <input type="submit" class="buttonCat" value="Interieur" name="interieur">
+                        </form>
+                    </li>
                     <div class="barCategorie"></div>
-                    <li><input type="button" class="buttonCat" value="Exterieur"></li>
+                    <li>
+                        <form action="" method="post">
+                            <input type="submit" class="buttonCat" value="Exterieur" name="exterieur">
+                        </form>
+                    </li>
                     <div class="barCategorie"></div>
-                    <li><input type="button" class="buttonCat" value="Sensation"></li>
+                    <li>
+                        <form action="" method="post">
+                            <input type="submit" class="buttonCat" value="Sensation" name="sensation">
+                        </form>
+                    </li>
                     <div class="barCategorie"></div>
-                    <li><input type="button" class="buttonCat" value="En famille"></li>
+                    <li>
+                        <form action="" method="post">
+                            <input type="submit" class="buttonCat" value="En famille" name="famille">
+                        </form>
+                    </li>
                     <div class="barCategorie"></div>
-                    <li><input type="button" class="buttonCat" value="Découverte"></li>
+                    <li>
+                        <form action="" method="post">
+                            <input type="submit" class="buttonCat" value="Découverte" name="decouverte">
+                        </form>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -301,7 +355,7 @@ if ($compteur_de_filtres == 1) {
             </div>
             <div id="numero">
                 <?php
-                echo $_SESSION['count'];
+                echo $_SESSION['count']+1;
                 ?>
             </div>
             <div id="page_suivante">
