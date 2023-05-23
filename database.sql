@@ -36,7 +36,7 @@ CREATE TABLE Carte
 (
     id                int PRIMARY KEY AUTO_INCREMENT,
     date_ajout        date,
-    partenaire        varchar(25),
+    partenaire        int,
     prix              int,
     nomCarte          varchar(50),
     description_carte varchar(200),
