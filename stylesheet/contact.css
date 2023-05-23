@@ -56,7 +56,7 @@
 .submit-button {
     border: 2px solid #272727;
     color: #272727;
-    background: linear-gradient(to left, white 50%, #272727 50%) right;
+    background: linear-gradient(to left, #F8F1F1 50%, #272727 50%) right;
     background-size: 200%;
     padding: 15px 30px;
     margin-top: 20px;
@@ -66,5 +66,5 @@
 
 .submit-button:hover {
     background-position: left;
-    color: white;
+    color: #F8F1F1;
 }

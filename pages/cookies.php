@@ -4,6 +4,7 @@
     <title>GIFTY - Cookies</title>
     <link rel="stylesheet" href="../stylesheet/cookies.css">
     <?php include("head.php") ?>
+    <script src="../javascript/cookies.js"></script>
 </head>
 <body>
 
