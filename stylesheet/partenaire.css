@@ -1,0 +1,136 @@
+.partenaire {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: calc(100vh - 100px - 98.667px);
+    overflow: hidden;
+}
+
+h1 {
+    margin: 20px;
+    margin-bottom: 50px;
+    font-size: 50px;
+}
+
+#nouveaute {
+    display: flex;
+    flex-direction: column;
+}
+
+h2 {
+    color: #960018;
+    margin: 20px;
+    margin-bottom: 10px;
+    font-size: 40px;
+}
+
+.bandeauNouv {
+    display: flex;
+    flex-direction: row;
+    margin-left: 20px;
+}
+
+.slideNouv {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-right: 40px;
+    align-items: center;
+    padding: 10px;
+}
+
+.slideNouv:hover .boxImgNouv{
+    scale: 1.03;
+}
+
+.boxImgNouv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+    width: 40vh;
+    height: 40vh;
+    margin-bottom: 20px;
+    transition: scale .5s ease-in-out;
+}
+
+.secPartenaire {
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+}
+
+h3 {
+    margin: 20px;
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+
+.bandeau {
+    display: flex;
+    width: 100%;
+    margin: 20px;
+}
+
+.boxSlider {
+    display: flex;
+    width: calc((30vh + 30px + 20px)*5);
+    overflow: hidden;
+    position: absolute;
+    margin-left: 10vh;
+}
+
+.boutonGauche{
+    position: relative;
+    width: 10vh;
+    height: 10vh;
+    left: 2vh;
+    top: 10vh;
+    z-index: 4;
+    border: red solid 2px;
+}
+
+.boutonDroite{
+    position: relative;
+    width: 10vh;
+    height: 10vh;
+    left: calc((30vh + 30px + 20px)*5 - 6vh);
+    top: 10vh;
+    z-index: 4;
+    border: red solid 2px;
+}
+
+.slider {
+    display: flex;
+    flex-direction: row;
+    left: 0;
+}
+
+.slide {
+    display: flex;
+    flex-direction: column;
+    margin-right: 30px;
+    align-items: center;
+    padding: 10px;
+}
+
+.slide:hover .boxImg{
+    scale: 1.05;
+}
+
+.boxImg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+    width: 30vh;
+    height: 30vh;
+    margin-bottom: 20px;
+    transition: scale .5s ease-in-out;
+}
+
+.nomBox{
+    font-size: 20px;
+}

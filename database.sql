@@ -62,6 +62,50 @@ VALUES (NULL, 'Partenaire');
 
 INSERT INTO Users
 VALUES (NULL, 'Reinert', 'Aurélien', MD5('whleutwc'), 'aurelien.reinert@edu.ece.fr', '0670987563', 1, NULL);
+INSERT INTO Users
+VALUES (NULL, 'Reinert', 'Décathlon', 23, 'aurelien.reinert@edu.ece.fr', '0670987563', 3, 1);
+INSERT INTO Users
+VALUES (NULL, 'Reinert', 'Amazon Video', 23, 'aurelien.reinert@edu.ece.fr', '0670987563', 3, 2);
+INSERT INTO Users
+VALUES (NULL, 'Reinert', 'Intersport', 23, 'aurelien.reinert@edu.ece.fr', '0670987563', 3, 1);
+INSERT INTO Users
+VALUES (NULL, 'Reinert', 'Canal', 23, 'aurelien.reinert@edu.ece.fr', '0670987563', 3, 2);INSERT INTO Users
+VALUES (NULL, 'Reinert', 'Salomon', 23, 'aurelien.reinert@edu.ece.fr', '0670987563', 3, 1);INSERT INTO Users
+VALUES (NULL, 'Reinert', 'RMC Sport', 23, 'aurelien.reinert@edu.ece.fr', '0670987563', 3, 2);INSERT INTO Users
+VALUES (NULL, 'Reinert', 'Gaumont', 23, 'aurelien.reinert@edu.ece.fr', '0670987563', 3, 3);INSERT INTO Users
+VALUES (NULL, 'Reinert', 'Europa Pack', 23, 'aurelien.reinert@edu.ece.fr', '0670987563', 3, 4);INSERT INTO Users
+VALUES (NULL, 'Reinert', 'Rosignol', 23, 'aurelien.reinert@edu.ece.fr', '0670987563', 3, 1);INSERT INTO Users
+VALUES (NULL, 'Reinert', 'Pathé', 23, 'aurelien.reinert@edu.ece.fr', '0670987563', 3, 3);INSERT INTO Users
+VALUES (NULL, 'Reinert', 'Disney', 23, 'aurelien.reinert@edu.ece.fr', '0670987563', 3, 4);INSERT INTO Users
+VALUES (NULL, 'Reinert', 'Lazer Game', 23, 'aurelien.reinert@edu.ece.fr', '0670987563', 3, 3);INSERT INTO Users
+VALUES (NULL, 'Reinert', 'Nike', 23, 'aurelien.reinert@edu.ece.fr', '0670987563', 3, 1);INSERT INTO Users
+VALUES (NULL, 'Reinert', 'VTT', 23, 'aurelien.reinert@edu.ece.fr', '0670987563', 3, 4);INSERT INTO Users
+VALUES (NULL, 'Reinert', 'HBO', 23, 'aurelien.reinert@edu.ece.fr', '0670987563', 3, 2);INSERT INTO Users
+VALUES (NULL, 'Reinert', 'Chamrousse', 23, 'aurelien.reinert@edu.ece.fr', '0670987563', 3, 4);INSERT INTO Users
+VALUES (NULL, 'Reinert', 'Addidas', 23, 'aurelien.reinert@edu.ece.fr', '0670987563', 3, 1);INSERT INTO Users
+VALUES (NULL, 'Reinert', 'Escape Game', 23, 'aurelien.reinert@edu.ece.fr', '0670987563', 3, 3);INSERT INTO Users
+VALUES (NULL, 'Reinert', 'Netflix', 23, 'aurelien.reinert@edu.ece.fr', '0670987563', 3, 2);INSERT INTO Users
+VALUES (NULL, 'Reinert', 'Puma', 23, 'aurelien.reinert@edu.ece.fr', '0670987563', 3, 1);INSERT INTO Users
+VALUES (NULL, 'Reinert', 'Play Station', 23, 'aurelien.reinert@edu.ece.fr', '0670987563', 3, 3);INSERT INTO Users
+VALUES (NULL, 'Reinert', 'L`équipe', 23, 'aurelien.reinert@edu.ece.fr', '0670987563', 3, 2);INSERT INTO Users
+VALUES (NULL, 'Reinert', 'Nintendo', 23, 'aurelien.reinert@edu.ece.fr', '0670987563', 3, 2);INSERT INTO Users
+VALUES (NULL, 'Reinert', 'La Cluza', 23, 'aurelien.reinert@edu.ece.fr', '0670987563', 3, 4);INSERT INTO Users
+VALUES (NULL, 'Reinert', 'Motor Sport', 23, 'aurelien.reinert@edu.ece.fr', '0670987563', 3, 4);INSERT INTO Users
+VALUES (NULL, 'Reinert', 'Ami', 23, 'aurelien.reinert@edu.ece.fr', '0670987563', 3, 5);INSERT INTO Users
+VALUES (NULL, 'Reinert', 'Champion', 23, 'aurelien.reinert@edu.ece.fr', '0670987563', 3, 5);INSERT INTO Users
+VALUES (NULL, 'Reinert', 'Nike', 23, 'aurelien.reinert@edu.ece.fr', '0670987563', 3, 5);INSERT INTO Users
+VALUES (NULL, 'Reinert', 'Dior', 23, 'aurelien.reinert@edu.ece.fr', '0670987563', 3, 5);INSERT INTO Users
+VALUES (NULL, 'Reinert', 'Louis Vuitton', 23, 'aurelien.reinert@edu.ece.fr', '0670987563', 3, 5);INSERT INTO Users
+VALUES (NULL, 'Reinert', 'H&M', 23, 'aurelien.reinert@edu.ece.fr', '0670987563', 3, 5);INSERT INTO Users
+VALUES (NULL, 'Reinert', 'GP Exlorer', 23, 'aurelien.reinert@edu.ece.fr', '0670987563', 3, 4);INSERT INTO Users
+VALUES (NULL, 'Reinert', 'Eneide', 23, 'aurelien.reinert@edu.ece.fr', '0670987563', 3, 4);
+
+INSERT INTO Domaine
+VALUES (1, 'Sport');INSERT INTO Domaine
+VALUES (2, 'Multimedia');INSERT INTO Domaine
+VALUES (3, 'Interieur');INSERT INTO Domaine
+VALUES (4, 'Sensation');INSERT INTO Domaine
+VALUES (5, 'Mode');
 
 
 INSERT INTO Carte
@@ -71,5 +115,3 @@ VALUES (NULL, '2023-05-21', 'decathlon, intersport, sport2000', 25, 'football', 
 (NULL, '2022/10/11', 'Val Thorens', 375, 'ski', "Profitez d'un forfait saisonnier à prix réduit !", "../assets/2.jpg", "exterieur, sensation forte"),
 (NULL, '2022/07/01', 'Mc Donald', 2, 'repas', "Profitez de 90% de réduction sur votre prochaine note.", "../assets/mcdo.jpg", "interieur");
 
-
-COMMIT;
