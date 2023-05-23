@@ -47,6 +47,6 @@
         </details>
     </div>
     <?php include("footer.php") ?>
-    <script src="../javascript/menu.js"></script>
+    C
 </body>
 </html>

@@ -5,6 +5,23 @@
     width: 100%;
     height: calc(100vh - 100px - 98.667px);
     background-color: #F9F0F1;
+    overflow: hidden;
+}
+
+.rondFond{
+    width: 250px;
+    height: 500px;
+    position: absolute;
+    background-color: rgb(41, 41, 41);
+}
+
+#fondA{
+    left: 0;
+    border-radius: 0 250px 250px 0;
+}
+#fondB{
+    right: 0;
+    border-radius: 250px 0 0 250px;
 }
 
 .rechercheBox{
