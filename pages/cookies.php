@@ -50,9 +50,8 @@
             recette, n'hésitez pas à nous contacter. Nous sommes là pour rendre votre expérience en ligne aussi douce et
             agréable que possible.
         </p>
+        <img src="../assets/cookie.png" alt="Cookie" class="cookie-img">
     </div>
-
-
     <?php include('footer.php') ?>
 
 </body>
