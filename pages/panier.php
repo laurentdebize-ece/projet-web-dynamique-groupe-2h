@@ -23,7 +23,7 @@
     if (creationPanier()) {
         $nbCartes = count($_SESSION["panier"]["idCarte"]);
         echo "<div class='panier'>";
-        echo "<p class='intro-panier'>Vous avez " . $nbCartes . " éléments dans le panier.</p>";
+        echo "<p class='intro-panier'>Vous avez " . compterArticle() . " éléments dans le panier.</p>";
         if ($nbCartes <= 0) {
             echo "<p class='intro-panier'>Votre panier est vide</p>";
         } else {
@@ -33,6 +33,7 @@
                 echo "<p>Nom de la carte : " . $_SESSION["panier"]["nomCarte"][$i] . "</p>";
                 echo "<p> Quantite : " . $_SESSION["panier"]["qteCarte"][$i] . "</p>";
                 echo "<p>Prix unitaire : " . $_SESSION["panier"]["prixCarte"][$i] . " €</p>";
+                echo "<div class='trash-button'><i class='fa-regular fa-trash-can'></i></div>";
                 echo "</div>";
             }
             echo "<p class='total'>Montant total : " . montantGlobal() . " €</p>";

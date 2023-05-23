@@ -35,3 +35,9 @@
     border: 0;
     align-self: flex-end;
 }
+
+.trash-button {
+    background-color: #ECECEC;
+    padding: 10px;
+    border-radius: 3px;
+}
