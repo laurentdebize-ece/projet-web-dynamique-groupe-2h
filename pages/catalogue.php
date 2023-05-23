@@ -36,14 +36,10 @@ if (empty($_POST['filtre']) || $_POST['filtre'] == "aucun") {
     $compteur_de_filtres = 1;
 }
 
-if (empty($_POST['num_page']) or $_POST['num_page'] == 0) {
-    $num_page = 0;
-} else {
-    $num_page = $_POST['num_page'];
-}
 
-$start = $num_page * 6;
-$count = $num_page * 6 + 6;
+$start = $_SESSION['count'] * 6;
+$count = $_SESSION['count'] * 6 + 6;
+
 
 
 // requete carroussel :
@@ -314,6 +310,7 @@ $img_4 = $reponse_carroussel['img'];
         <div class="catalogue">
             <div id="premiere_ligne">
                 <div class="produit_unitaire">
+                    
                     <img src="<?php echo $donnees['img']; ?>" alt="Carte_1">
                     <div class="description">
                         <h3><?php echo $donnees['nomCarte']; ?></h3>
@@ -334,19 +331,21 @@ $img_4 = $reponse_carroussel['img'];
                 ?>
 
             <div class="produit_unitaire">
-                <img src="<?php echo $donnees['img']; ?>" alt="Carte_2">
-                <div class="description">
-                    <h3><?php echo $donnees['nomCarte']; ?></h3>
-                    <p>
-                        <?php
-                        echo $donnees['description_carte'];
-                        ?>
-                    </p>
-                    <form action="catalogue_en_savoir_plus.php" method="get">
-                        <input type="hidden" name="id" value="<?php echo $donnees['id']; ?>">
-                        <button class="bouton_en_savoir_plus" type="submit">En savoir plus</button>
-                    </form>
-                </div>
+
+                    <img src="<?php echo $donnees['img']; ?>" alt="Carte_2">
+                    <div class="description">
+                        <h3><?php echo $donnees['nomCarte']; ?></h3>
+                        <p>
+                            <?php
+                            echo $donnees['description_carte'];
+                            ?>
+                        </p>
+                        <form action="catalogue_en_savoir_plus.php" method="get">
+                            <input type="hidden" name="id" value="<?php echo $donnees['id']; ?>">
+                            <button class="bouton_en_savoir_plus" type="submit">En savoir plus</button>
+                        </form>
+                    </div>
+                
             </div>
             <?php
             $donnees = $reponse->fetch();
@@ -408,6 +407,7 @@ $img_4 = $reponse_carroussel['img'];
             $donnees = $reponse->fetch();
             ?>
             <div class="produit_unitaire">
+                
                 <img src="<?php echo $donnees['img']; ?>" alt="Carte_6">
                 <div class="description">
                     <h3><?php echo $donnees['nomCarte']; ?></h3>
@@ -421,6 +421,7 @@ $img_4 = $reponse_carroussel['img'];
                         <button class="bouton_en_savoir_plus" type="submit">En savoir plus</button>
                     </form>
                 </div>
+
             </div>
         </div>
         <?php
