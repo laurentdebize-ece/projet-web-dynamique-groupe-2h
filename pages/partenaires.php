@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <title>GIFTY - Accueil</title>
@@ -10,7 +11,21 @@
     <script src="../javascript/acces.js"></script>
 
 </head>
+
 <body>
+
+    <?php include('connexion_base.php') ?>
+    <?php
+    session_start();
+
+    $partenaireSport = $bdd->query("SELECT prenom, domaine FROM Users WHERE statut = '3' AND domaine = '1';");
+    $partenaireMultimedia = $bdd->query("SELECT prenom, domaine FROM Users WHERE statut = '3' AND domaine = '2';");
+    $partenaireInterieur = $bdd->query("SELECT prenom, domaine FROM Users WHERE statut = '3' AND domaine = '3';");
+    $partenaireSensation = $bdd->query("SELECT prenom, domaine FROM Users WHERE statut = '3' AND domaine = '4';");
+    $partenaireMode = $bdd->query("SELECT prenom, domaine FROM Users WHERE statut = '3' AND domaine = '5';");
+
+    ?>
+
     <?php include('menu.php') ?>
     <div class="partenaire">
         <h1>Nos Partenaires</h1>
@@ -19,154 +34,137 @@
             <div class="bandeauNouv">
                 <div class="slideNouv">
                     <div class="boxImgNouv"><img src="" alt="">image</div>
-                    <div class="nomBoxNouv">Netflix</div>    
+                    <div class="nomBoxNouv">Netflix</div>
                 </div>
                 <div class="slideNouv">
                     <div class="boxImgNouv"><img src="" alt="">image</div>
-                    <div class="nomBoxNouv">Ami</div>    
+                    <div class="nomBoxNouv">Ami</div>
                 </div>
                 <div class="slideNouv">
                     <div class="boxImgNouv"><img src="" alt="">image</div>
-                    <div class="nomBoxNouv">apple</div>    
+                    <div class="nomBoxNouv">apple</div>
                 </div>
             </div>
         </section>
         <section id="sport" class="secPartenaire">
             <h3 class="textSec">Sport</h3>
             <div class="bandeau">
+                <button class="boutonGauche" onclick="turn(1)"></button>
+                <button class="boutonDroite" onclick="turn(2)"></button>
                 <div class="boxSlider">
-                    <div class="boutonGauche"></div>
-                    <div class="boutonDroite"></div>
-                    <div class="slider">
-                        <div class="slide">
-                            <div class="boxImg"><img src="" alt="">1</div>
-                            <div class="nomBox">Décathlon</div>
-                        </div>
-                        <div class="slide">
-                            <div class="boxImg"><img src="" alt="">1</div>
-                            <div class="nomBox">Intersport</div>
-                        </div>
-                        <div class="slide">
-                            <div class="boxImg"><img src="" alt="">1</div>
-                            <div class="nomBox">Salomon</div>
-                        </div>
-                        <div class="slide">
-                            <div class="boxImg"><img src="" alt="">1</div>
-                            <div class="nomBox">Rosignol</div>
-                        </div>
-                        <div class="slide">
-                            <div class="boxImg"><img src="" alt="">1</div>
-                            <div class="nomBox">Nike</div>
-                        </div>
-                        <div class="slide">
-                            <div class="boxImg"><img src="" alt="">1</div>
-                            <div class="nomBox">Addidas</div>
-                        </div>
+                    <div class="slider" id="sliderSport">
+                        <?php
+                        while ($donneeSport = $partenaireSport->fetch()) {
+                            ?>
+                            <div class="slide">
+                                <div class="boxImg"><img src="" alt="">1</div>
+                                <div class="nomBox">
+                                    <?php echo $donneeSport['prenom']; ?>
+                                </div>
+                            </div>
+                            <?php
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
         </section>
-        <section id="sport" class="secPartenaire">
+        <section id="mode" class="secPartenaire">
             <h3 class="textSec">Multimédia</h3>
             <div class="bandeau">
+                <div class="boutonGauche"></div>
+                <div class="boutonDroite"></div>
                 <div class="boxSlider">
-                    <div class="slider">
-                        <div class="slide">
-                            <div class="boxImg"><img src="" alt="">1</div>
-                            <div class="nomBox">Décathlon</div>
-                        </div>
-                        <div class="slide">
-                            <div class="boxImg"><img src="" alt="">1</div>
-                            <div class="nomBox">Intersport</div>
-                        </div>
-                        <div class="slide">
-                            <div class="boxImg"><img src="" alt="">1</div>
-                            <div class="nomBox">Salomon</div>
-                        </div>
-                        <div class="slide">
-                            <div class="boxImg"><img src="" alt="">1</div>
-                            <div class="nomBox">Rosignol</div>
-                        </div>
-                        <div class="slide">
-                            <div class="boxImg"><img src="" alt="">1</div>
-                            <div class="nomBox">Nike</div>
-                        </div>
-                        <div class="slide">
-                            <div class="boxImg"><img src="" alt="">1</div>
-                            <div class="nomBox">Addidas</div>
-                        </div>
+                    <div class="slider" id="sliderMode">
+                        <?php
+                        while ($donneeMode = $partenaireMode->fetch()) {
+                            ?>
+                            <div class="slide">
+                                <div class="boxImg"><img src="" alt="">1</div>
+                                <div class="nomBox">
+                                    <?php echo $donneeMode['prenom']; ?>
+                                </div>
+                            </div>
+                            <?php
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
         </section>
-        <section id="sport" class="secPartenaire">
+        <section id="multimedia" class="secPartenaire">
+            <h3 class="textSec">Multimédia</h3>
+            <div class="bandeau">
+                <div class="boutonGauche"></div>
+                <div class="boutonDroite"></div>
+                <div class="boxSlider">
+                    <div class="slider">
+                        <?php
+                        while ($donneeMultimedia = $partenaireMultimedia->fetch()) {
+                            ?>
+                            <div class="slide">
+                                <div class="boxImg"><img src="" alt="">1</div>
+                                <div class="nomBox">
+                                    <?php echo $donneeMultimedia['prenom']; ?>
+                                </div>
+                            </div>
+                            <?php
+                        }
+                        ?>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="interieur" class="secPartenaire">
             <h3 class="textSec">Intérieur</h3>
             <div class="bandeau">
+                <div class="boutonGauche"></div>
+                <div class="boutonDroite"></div>
                 <div class="boxSlider">
                     <div class="slider">
-                        <div class="slide">
-                            <div class="boxImg"><img src="" alt="">1</div>
-                            <div class="nomBox">Décathlon</div>
-                        </div>
-                        <div class="slide">
-                            <div class="boxImg"><img src="" alt="">1</div>
-                            <div class="nomBox">Intersport</div>
-                        </div>
-                        <div class="slide">
-                            <div class="boxImg"><img src="" alt="">1</div>
-                            <div class="nomBox">Salomon</div>
-                        </div>
-                        <div class="slide">
-                            <div class="boxImg"><img src="" alt="">1</div>
-                            <div class="nomBox">Rosignol</div>
-                        </div>
-                        <div class="slide">
-                            <div class="boxImg"><img src="" alt="">1</div>
-                            <div class="nomBox">Nike</div>
-                        </div>
-                        <div class="slide">
-                            <div class="boxImg"><img src="" alt="">1</div>
-                            <div class="nomBox">Addidas</div>
-                        </div>
+                        <?php
+                        while ($donneeInterieur = $partenaireInterieur->fetch()) {
+                            ?>
+                            <div class="slide">
+                                <div class="boxImg"><img src="" alt="">1</div>
+                                <div class="nomBox">
+                                    <?php echo $donneeInterieur['prenom']; ?>
+                                </div>
+                            </div>
+                            <?php
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
         </section>
-        <section id="sport" class="secPartenaire">
+        <section id="sensation" class="secPartenaire">
             <h3 class="textSec">Sensation</h3>
             <div class="bandeau">
+                <div class="boutonGauche"></div>
+                <div class="boutonDroite"></div>
                 <div class="boxSlider">
                     <div class="slider">
-                        <div class="slide">
-                            <div class="boxImg"><img src="" alt="">1</div>
-                            <div class="nomBox">Décathlon</div>
-                        </div>
-                        <div class="slide">
-                            <div class="boxImg"><img src="" alt="">1</div>
-                            <div class="nomBox">Intersport</div>
-                        </div>
-                        <div class="slide">
-                            <div class="boxImg"><img src="" alt="">1</div>
-                            <div class="nomBox">Salomon</div>
-                        </div>
-                        <div class="slide">
-                            <div class="boxImg"><img src="" alt="">1</div>
-                            <div class="nomBox">Rosignol</div>
-                        </div>
-                        <div class="slide">
-                            <div class="boxImg"><img src="" alt="">1</div>
-                            <div class="nomBox">Nike</div>
-                        </div>
-                        <div class="slide">
-                            <div class="boxImg"><img src="" alt="">1</div>
-                            <div class="nomBox">Addidas</div>
-                        </div>
+                        <?php
+                        while ($donneeSensation = $partenaireSensation->fetch()) {
+                            ?>
+                            <div class="slide">
+                                <div class="boxImg"><img src="" alt="">1</div>
+                                <div class="nomBox">
+                                    <?php echo $donneeSensation['prenom']; ?>
+                                </div>
+                            </div>
+                            <?php
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
         </section>
     </div>
     <?php include('footer.php') ?>
+    <script src="../javascript/partenaire.js"></script>
     <script src="../javascript/menu.js"></script>
 </body>
+
 </html>
