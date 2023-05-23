@@ -22,6 +22,12 @@ if(isset($_GET['id'])){
 $requete = $bdd->prepare("SELECT id, img, prix, nomCarte, description_carte, partenaire FROM Carte WHERE id=?");
 $requete->execute([$id]);
 $donnees = $requete->fetch();
+$partenaire = $donnees['partenaire'];
+
+$requete2 = $bdd->prepare("SELECT prenom FROM Users where id =?");
+
+$requete2->execute(['$partenaire']);
+$donnees2 = $requete2->fetch();
 
 ?>
 <div class="main">
@@ -49,7 +55,7 @@ $donnees = $requete->fetch();
                 </form>
             </div>
         </div>
-        <p>A utiliser auprès de ces partenaires : <?php echo $donnees['partenaire']; ?></p>
+        <p>A utiliser auprès de ces partenaires : <?php echo $donnees2['partenaire']; ?></p>
     </div>
 </div>
 
