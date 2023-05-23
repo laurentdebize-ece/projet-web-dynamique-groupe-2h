@@ -41,7 +41,7 @@ session_start();
                 break;
             case 2: //partenaire
                 $id_b1 = "donnees_perso_partenaire";
-                $id_b2 = "panier_partenaire";
+                $id_b2 = "";
                 $id_b3 = "cb_partenaire";
                 $id_b4 = "settings_partenaire";
                 break;
