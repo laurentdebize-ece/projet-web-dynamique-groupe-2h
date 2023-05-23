@@ -42,15 +42,15 @@ function supprimerCarte($idCarte)
         $tmp["qteCarte"] = array();
         $tmp["nomCarte"] = array();
         $tmp["prixCarte"] = array();
-        $tmp["verrou"] = $_SESSION["panier"]["verrou"];
+        $tmp["imgCarte"] = array();
 
-        for ($i = 0; $i < count($_SESSION["panier"]["idCarte"]); $i++) {
+        for ($i = 0; $i < count($_SESSION["panier"]["idCarte"]) - 1; $i++) {
             if ($_SESSION["panier"]["idCarte"][$i] !== $idCarte) {
                 array_push($tmp["idCarte"], $_SESSION["panier"]["idCarte"][$i]);
-                array_push($tmp["qteCarte"], $_SESSION["panier"]["qteProduit"][$i]);
+                array_push($tmp["qteCarte"], $_SESSION["panier"]["qteCarte"][$i]);
                 array_push($tmp["prixCarte"], $_SESSION["panier"]["prixCarte"][$i]);
                 array_push($tmp["nomCarte"], $_SESSION["panier"]["nomCarte"][$i]);
-                array_push($tmp["nomCarte"], $_SESSION["panier"]["imgCarte"][$i]);
+                array_push($tmp["imgCarte"], $_SESSION["panier"]["imgCarte"][$i]);
             }
         }
         $_SESSION["panier"] = $tmp;
