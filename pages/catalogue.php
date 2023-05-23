@@ -21,9 +21,9 @@ session_start();
 
 $nombre_de_pages = 0;
 
-if (!isset($_SESSION['count'])) {
-    $_SESSION['count'] = 0;
-}
+    if (!isset($_SESSION['count'])) {
+        $_SESSION['count'] = 0;
+    }
 
 ?>
 <?php $compteur_de_filtres = 0; ?>
@@ -330,7 +330,7 @@ $donnees = $reponse->fetch();
             $donnees = $reponse->fetch();
             ?>
 
-            <div class="produit_unitaire">
+                <div class="produit_unitaire">
 
                 <img src="<?php echo $donnees['img']; ?>" alt="Carte_2">
                 <div class="description">
