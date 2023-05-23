@@ -61,14 +61,10 @@ INSERT INTO statut
 VALUES (NULL, 'Partenaire');
 
 INSERT INTO Users
-VALUES (NULL, 'Reinert', 'Aurélien', MD5('whleutwc'), 'aurelien.reinert@edu.ece.fr', '0670987563', 1, NULL);
-INSERT INTO Users
-VALUES (NULL, 'Reinert', 'Décathlon', 23, 'aurelien.reinert@edu.ece.fr', '0670987563', 3, 1);
-INSERT INTO Users
-VALUES (NULL, 'Reinert', 'Amazon Video', 23, 'aurelien.reinert@edu.ece.fr', '0670987563', 3, 2);
-INSERT INTO Users
-VALUES (NULL, 'Reinert', 'Intersport', 23, 'aurelien.reinert@edu.ece.fr', '0670987563', 3, 1);
-INSERT INTO Users
+VALUES (NULL, 'Reinert', 'Aurélien', MD5('whleutwc'), 'aurelien.reinert@edu.ece.fr', '0670987563', 1, NULL);INSERT INTO Users
+VALUES (NULL, 'Reinert', 'Décathlon', 23, 'aurelien.reinert@edu.ece.fr', '0670987563', 3, 1);INSERT INTO Users
+VALUES (NULL, 'Reinert', 'Amazon Video', 23, 'aurelien.reinert@edu.ece.fr', '0670987563', 3, 2);INSERT INTO Users
+VALUES (NULL, 'Reinert', 'Intersport', 23, 'aurelien.reinert@edu.ece.fr', '0670987563', 3, 1);INSERT INTO Users
 VALUES (NULL, 'Reinert', 'Canal', 23, 'aurelien.reinert@edu.ece.fr', '0670987563', 3, 2);INSERT INTO Users
 VALUES (NULL, 'Reinert', 'Salomon', 23, 'aurelien.reinert@edu.ece.fr', '0670987563', 3, 1);INSERT INTO Users
 VALUES (NULL, 'Reinert', 'RMC Sport', 23, 'aurelien.reinert@edu.ece.fr', '0670987563', 3, 2);INSERT INTO Users
