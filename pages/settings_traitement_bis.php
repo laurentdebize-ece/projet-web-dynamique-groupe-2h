@@ -36,10 +36,10 @@
 
             $reponse->closeCursor();
             
-            echo "<script>window.location.assign('http://localhost:8888/projet-web-dynamique-groupe-2h/pages/compte.php');</script>";
+            echo "<script>window.location.assign('compte.php');</script>";
 
         }
-        echo "<script>window.location.assign('http://localhost:8888/projet-web-dynamique-groupe-2h/pages/accueil.php');</script>";
+        echo "<script>window.location.assign('accueil.php');</script>";
 
     }
 }

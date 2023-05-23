@@ -26,11 +26,11 @@
         $reponse = $bdd->prepare("UPDATE Carte SET nomCarte = ?, prix = ?, description_carte=? WHERE id = ?");
         $reponse->execute([$nom, $prix, $des, htmlspecialchars($_POST['id_carte'])]);
 
-        echo "<script>window.location.assign('http://localhost:8888/projet-web-dynamique-groupe-2h/pages/compte.php');</script>";
+        echo "<script>window.location.assign('compte.php');</script>";
         
     }
     else{
-        echo "<script>window.location.assign('http://localhost:8888/projet-web-dynamique-groupe-2h/pages/compte.php');</script>";
+        echo "<script>window.location.assign('compte.php');</script>";
     }
     }
 

@@ -24,11 +24,11 @@
         $reponse = $bdd->prepare("UPDATE Users SET mot_de_passe = ?, domaine = ?, nom=?, phone=? WHERE email = ?");
         $reponse->execute([$mdp, $dom, $nom,$tel, htmlspecialchars($_POST['mail_part'])]);
 
-        echo "<script>window.location.assign('http://localhost:8888/projet-web-dynamique-groupe-2h/pages/compte.php');</script>";
+        echo "<script>window.location.assign('compte.php');</script>";
         
     }
     else{
-        echo "<script>window.location.assign('http://localhost:8888/projet-web-dynamique-groupe-2h/pages/compte.php');</script>";
+        echo "<script>window.location.assign('compte.php');</script>";
     }
     }
 
