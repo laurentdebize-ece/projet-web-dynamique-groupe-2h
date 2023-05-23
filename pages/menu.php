@@ -36,3 +36,4 @@
         </div>
     </nav>
 </header>
+<script src="../javascript/menu.js"></script>
