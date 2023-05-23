@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
     <title>GIFTY - Accueil</title>
-    <link rel="stylesheet" href="../stylesheet/main.css">
-    <link rel="stylesheet" href="../stylesheet/accueil.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="../javascript/acces.js"></script>
-
+    <link rel="stylesheet" href="../stylesheet/accueil.css">
+    <?php include("head.php") ?>
 </head>
 <body>
     <?php include('menu.php');

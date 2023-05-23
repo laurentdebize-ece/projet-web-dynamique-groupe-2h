@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title>Conditions générales de vente</title>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="../stylesheet/main.css">
+    <title>GIFTY - Conditions générales de vente</title>
     <link rel="stylesheet" href="../stylesheet/conditions.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <?php include("head.php") ?>
 </head>
 <body>
     <?php include("menu.php") ?>

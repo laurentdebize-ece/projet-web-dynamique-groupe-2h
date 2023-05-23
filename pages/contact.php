@@ -2,9 +2,8 @@
 <html lang="fr">
 <head>
     <title>GIFTY - Contact</title>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="../stylesheet/main.css">
     <link rel="stylesheet" href="../stylesheet/contact.css">
+    <?php include("head.php") ?>
 </head>
 <body>
     <?php include("menu.php") ?>
