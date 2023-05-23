@@ -23,6 +23,10 @@ $requete = $bdd->prepare("SELECT id, img, prix, nomCarte, description_carte, par
 $requete->execute([$id]);
 $donnees = $requete->fetch();
 
+$requete2 = $bdd->prepare("SELECT prenom FROM Users where partenaire =?");
+$requete2->execute($donnees['partenaire']);
+$donnees2 = $requete2->fetch();
+
 ?>
 <div class="main">
     <div class="image-carte">
@@ -49,7 +53,7 @@ $donnees = $requete->fetch();
                 </form>
             </div>
         </div>
-        <p>A utiliser auprès de ces partenaires : <?php echo $donnees['partenaire']; ?></p>
+        <p>A utiliser auprès de ces partenaires : <?php echo $donnees2['partenaire']; ?></p>
     </div>
 </div>
 
