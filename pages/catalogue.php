@@ -19,6 +19,8 @@
 <?php
 session_start();
 
+$nombre_de_pages = 0;  
+
 if (!isset($_SESSION['count'])) {
     $_SESSION['count'] = 0;
 }
@@ -421,6 +423,12 @@ $img_4 = $reponse_carroussel['img'];
                 </div>
             </div>
         </div>
+        <?php
+        while ($nbr > 0) {
+            $nbr -= 6;
+            $nombre_de_pages++;
+        }
+        ?>
         <div id="prev_next">
             <div id="page_precedente">
                 <form method="POST" action="">
@@ -430,10 +438,10 @@ $img_4 = $reponse_carroussel['img'];
                     </button>
                 </form>
                 <?php
-                if (isset($_POST['increment'])) {
-                    $_SESSION['count']++;
-                }
-                ?>
+                if (isset($_POST['decrement']) && $_SESSION['count'] > 0) {
+                    $_SESSION['count']--;
+                } ?>
+                
             </div>
             <div id="numero">
                 <?php
@@ -448,9 +456,10 @@ $img_4 = $reponse_carroussel['img'];
                     </button>
                 </form>
                 <?php
-                if (isset($_POST['decrement']) && $_SESSION['count'] > 0) {
-                    $_SESSION['count']--;
-                } ?>
+                if (isset($_POST['increment']) && $_SESSION['count'] < $nombre_de_pages) {
+                    $_SESSION['count']++;
+                }
+                ?>
             </div>
         </div>
         </div>
