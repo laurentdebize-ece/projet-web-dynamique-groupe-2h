@@ -68,4 +68,29 @@ $(document).ready(function (){
         $('.informarions_container').load('/projet-web-dynamique-groupe-2h/pages/settings_uti.php');
     });
 
+    //Partie partenaire
+    $('.boutton2').css('display', 'none');
+
+    $("#donnees_perso_partenaire").click(function(){
+        $('#donnees_perso_partenaire').css('border', '#960018 2px solid');
+        $('#cb_partenaire').css('border', 'white 2px solid');
+        $('#settings_partenaire').css('border', 'white 2px solid');
+        $('.informarions_container').load('/projet-web-dynamique-groupe-2h/pages/donnees_uti.php');
+    });
+
+    $("#cb_partenaire").click(function(){
+        $('#cb_partenaire').css('border', '#960018 2px solid');
+        $('#donnees_perso_partenaire').css('border', 'white 2px solid');
+        $('#settings_partenaire').css('border', 'white 2px solid');
+        $('.informarions_container').load('/projet-web-dynamique-groupe-2h/pages/cb.php');
+    });
+
+    $("#settings_partenaire").click(function(){
+        $('#settings_partenaire').css('border', '#960018 2px solid');
+        $('#cb_partenaire').css('border', 'white 2px solid');
+        $('#panier_partenaire').css('border', 'white 2px solid');
+        $('#donnees_perso_partenaire').css('border', 'white 2px solid');
+        $('.informarions_container').load('/projet-web-dynamique-groupe-2h/pages/settings_part.php');
+    });
+
 });

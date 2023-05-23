@@ -1,13 +1,8 @@
-.moving-image {
-    position: absolute;
-    pointer-events: none;
-    width: 40px;
-  }
-
 .bla_bla_bla_bla_cookies {
     margin: auto;
     padding: 50px 20%;
-  }
+    position: relative;
+}
 
 .bla_bla_bla_bla_cookies p {
     padding: 20px 0;
@@ -15,9 +10,36 @@
 }
 
 #titre_cookies {
-  padding: 25px;
+    padding: 25px;
 }
 
 .texte_a_indenter {
     text-indent: 20px;
+}
+
+.cookie-img {
+    display: block;
+    position: absolute;
+    width: 200px;
+    top: 0;
+    left: 10%;
+    animation: animX 2.5s linear 0s infinite alternate, animY 4s linear 0s infinite alternate;
+}
+
+@keyframes animX {
+    from {
+        left: 0;
+    }
+    to {
+        left: calc(100% - 200px);
+    }
+}
+
+@keyframes animY {
+    from {
+        top: 0;
+    }
+    to {
+        top: 100%;
+    }
 }
