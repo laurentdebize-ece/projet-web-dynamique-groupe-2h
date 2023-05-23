@@ -7,6 +7,10 @@
     font-family: "DINAlternate-Bold.ttf", sans-serif;
 }
 
+body {
+    background-color: #F8F1F1;
+}
+
 .navbar {
     background-color: #960018;
     padding: 25px;
