@@ -13,8 +13,9 @@
 <body>
     <?php include('menu.php') ?>
     <div class="omnesbox">
+        <div class ="rondFond" id="fondA"></div>
+        <div class ="rondFond" id="fondB"></div>
         <div class="rechercheBox">
-            
             <form action="" method="" name="rechercheBox" class="inform">
                 <div class="titre">
                     <label for="recherche">Rechercher une omnes box</label>
@@ -28,7 +29,6 @@
                     <input type="submit" value="Rechercher">
                 </div>
             </form>
-            
         </div>
     </div>
     <?php include('footer.php') ?>

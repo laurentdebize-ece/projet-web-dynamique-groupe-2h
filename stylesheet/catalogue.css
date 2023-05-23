@@ -143,6 +143,11 @@ h3 {
     margin: 10px;
 }
 
+input[type="radio"]:checked + label::before {
+    border-color: #000000;
+    background-color: #000000;
+  }
+
 .filtre .filtreSubmit{
     background-color: transparent;
     border: solid #F8F1F1 2px;
