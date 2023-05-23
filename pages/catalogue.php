@@ -28,21 +28,11 @@ if (!isset($_SESSION['count'])) {
 
 
 <?php
-if (!empty($_POST['prix_croissant'])) {
-    $compteur_de_filtres = $compteur_de_filtres + 1;
+if (empty($_POST['filtre']) || $_POST['filtre'] == "aucun") {
+    $compteur_de_filtres = 0;
+} else {
+    $compteur_de_filtres = 1;
 }
-
-if (!empty($_POST['prix_decroissant'])) {
-    $compteur_de_filtres = $compteur_de_filtres + 1;
-}
-
-if (!empty($_POST['recent'])) {
-    $compteur_de_filtres = $compteur_de_filtres + 1;
-}
-
-if (!empty($_POST['ancien'])) {
-    $compteur_de_filtres = $compteur_de_filtres + 1;
-} 
 
 if (empty($_POST['num_page']) or $_POST['num_page'] == 0) {
     $num_page = 0;
@@ -134,28 +124,119 @@ $img_4 = $reponse_carroussel['img'];
             if ($compteur_de_filtres == 0) {
                 $reponse = $bdd->query("SELECT id, img, prix, nomCarte, description_carte FROM Carte LIMIT $start, $count;");
                 $nbr = $bdd->query("SELECT count(*) FROM Carte;");
-            }
-            $donnees = $reponse->fetch();
-            if ($compteur_de_filtres == 1) {
+            } else if ($compteur_de_filtres == 1) {
                 $nbr = $bdd->query("SELECT count(*) FROM Carte;");
-                if (!empty($_POST['prix_croissant'])){
+                if (!empty($_POST['filtre'] == "prix_croissant")){
                     $reponse = $bdd->query("SELECT id, img, nomCarte, description_carte FROM Carte ORDER BY prix DESC LIMIT $start, $count;");
                 }
-                if (!empty($_POST['prix_decroissant'])){
+                if (!empty($_POST['filtre'] == "prix_decroissant")){
                     $reponse = $bdd->query("SELECT id, img, nomCarte, description_carte FROM Carte ORDER BY prix ASC LIMIT $start, $count;");
                 }
-                if (!empty($_POST['recent'])){
+                if (!empty($_POST['filtre'] == "recent")){
                     $reponse = $bdd->query("SELECT id, img, nomCarte, description_carte FROM Carte ORDER BY date_ajout ASC LIMIT $start, $count;");
                 }
-                if (!empty($_POST['ancien'])){
+                if (!empty($_POST['filtre'] == "ancien")){
                     $reponse = $bdd->query("SELECT id, img, nomCarte, description_carte FROM Carte ORDER BY date_ajout DESC LIMIT $start, $count;");
                 }
             }
         } else if (!empty($_POST['interieur'])) {
-
-        } else if (!empty($_POST['exterieur'])) {}
-        else if (!empty($_POST['sensation'])) {}
+            if ($compteur_de_filtres == 0) {
+                $reponse = $bdd->query("SELECT id, img, prix, nomCarte, description_carte FROM Carte WHERE mots_clefs LIKE '%interieur%' LIMIT $start, $count;");
+                $nbr = $bdd->query("SELECT count(*) FROM Carte;");
+            } else if ($compteur_de_filtres == 1) {
+                $nbr = $bdd->query("SELECT count(*) FROM Carte;");
+                if (!empty($_POST['filtre'] == "prix_croissant")){
+                    $reponse = $bdd->query("SELECT id, img, nomCarte, description_carte FROM Carte WHERE mots_clefs LIKE '%interieur%' ORDER BY prix DESC LIMIT $start, $count;");
+                }
+                if (!empty($_POST['filtre'] == "prix_decroissant")){
+                    $reponse = $bdd->query("SELECT id, img, nomCarte, description_carte FROM Carte WHERE mots_clefs LIKE '%interieur%' ORDER BY prix ASC LIMIT $start, $count;");
+                }
+                if (!empty($_POST['filtre'] == "recent")){
+                    $reponse = $bdd->query("SELECT id, img, nomCarte, description_carte FROM Carte WHERE mots_clefs LIKE '%interieur%' ORDER BY date_ajout ASC LIMIT $start, $count;");
+                }
+                if (!empty($_POST['filtre'] == "ancien")){
+                    $reponse = $bdd->query("SELECT id, img, nomCarte, description_carte FROM Carte WHERE mots_clefs LIKE '%interieur%' ORDER BY date_ajout DESC LIMIT $start, $count;");
+                }
+            }
+        } else if (!empty($_POST['exterieur'])) {
+            if ($compteur_de_filtres == 0) {
+                $reponse = $bdd->query("SELECT id, img, prix, nomCarte, description_carte FROM Carte WHERE mots_clefs LIKE '%exterieur%' LIMIT $start, $count;");
+                $nbr = $bdd->query("SELECT count(*) FROM Carte;");
+            } else if ($compteur_de_filtres == 1) {
+                $nbr = $bdd->query("SELECT count(*) FROM Carte;");
+                if (!empty($_POST['filtre'] == "prix_croissant")){
+                    $reponse = $bdd->query("SELECT id, img, nomCarte, description_carte FROM Carte WHERE mots_clefs LIKE '%exterieur%' ORDER BY prix DESC LIMIT $start, $count;");
+                }
+                if (!empty($_POST['filtre'] == "prix_decroissant")){
+                    $reponse = $bdd->query("SELECT id, img, nomCarte, description_carte FROM Carte WHERE mots_clefs LIKE '%exterieur%' ORDER BY prix ASC LIMIT $start, $count;");
+                }
+                if (!empty($_POST['filtre'] == "recent")){
+                    $reponse = $bdd->query("SELECT id, img, nomCarte, description_carte FROM Carte WHERE mots_clefs LIKE '%exterieur%' ORDER BY date_ajout ASC LIMIT $start, $count;");
+                }
+                if (!empty($_POST['filtre'] == "ancien")){
+                    $reponse = $bdd->query("SELECT id, img, nomCarte, description_carte FROM Carte WHERE mots_clefs LIKE '%exterieur%' ORDER BY date_ajout DESC LIMIT $start, $count;");
+                }
+            }
+        } else if (!empty($_POST['sensation'])) {
+            if ($compteur_de_filtres == 0) {
+                $reponse = $bdd->query("SELECT id, img, prix, nomCarte, description_carte FROM Carte WHERE mots_clefs LIKE '%sensation%' LIMIT $start, $count;");
+                $nbr = $bdd->query("SELECT count(*) FROM Carte;");
+            } else if ($compteur_de_filtres == 1) {
+                $nbr = $bdd->query("SELECT count(*) FROM Carte;");
+                if (!empty($_POST['filtre'] == "prix_croissant")){
+                    $reponse = $bdd->query("SELECT id, img, nomCarte, description_carte FROM Carte WHERE mots_clefs LIKE '%sensation%' ORDER BY prix DESC LIMIT $start, $count;");
+                }
+                if (!empty($_POST['filtre'] == "prix_decroissant")){
+                    $reponse = $bdd->query("SELECT id, img, nomCarte, description_carte FROM Carte WHERE mots_clefs LIKE '%sensation%' ORDER BY prix ASC LIMIT $start, $count;");
+                }
+                if (!empty($_POST['filtre'] == "recent")){
+                    $reponse = $bdd->query("SELECT id, img, nomCarte, description_carte FROM Carte WHERE mots_clefs LIKE '%sensation%' ORDER BY date_ajout ASC LIMIT $start, $count;");
+                }
+                if (!empty($_POST['filtre'] == "ancien")){
+                    $reponse = $bdd->query("SELECT id, img, nomCarte, description_carte FROM Carte WHERE mots_clefs LIKE '%sensation%' ORDER BY date_ajout DESC LIMIT $start, $count;");
+                }
+            }
+        } else if (!empty($_POST['famille'])) {
+            if ($compteur_de_filtres == 0) {
+                $reponse = $bdd->query("SELECT id, img, prix, nomCarte, description_carte FROM Carte WHERE mots_clefs LIKE '%famille%' LIMIT $start, $count;");
+                $nbr = $bdd->query("SELECT count(*) FROM Carte;");
+            } else if ($compteur_de_filtres == 1) {
+                $nbr = $bdd->query("SELECT count(*) FROM Carte;");
+                if (!empty($_POST['filtre'] == "prix_croissant")){
+                    $reponse = $bdd->query("SELECT id, img, nomCarte, description_carte FROM Carte WHERE mots_clefs LIKE '%famille%' ORDER BY prix DESC LIMIT $start, $count;");
+                }
+                if (!empty($_POST['filtre'] == "prix_decroissant")){
+                    $reponse = $bdd->query("SELECT id, img, nomCarte, description_carte FROM Carte WHERE mots_clefs LIKE '%famille%' ORDER BY prix ASC LIMIT $start, $count;");
+                }
+                if (!empty($_POST['filtre'] == "recent")){
+                    $reponse = $bdd->query("SELECT id, img, nomCarte, description_carte FROM Carte WHERE mots_clefs LIKE '%famille%' ORDER BY date_ajout ASC LIMIT $start, $count;");
+                }
+                if (!empty($_POST['filtre'] == "ancien")){
+                    $reponse = $bdd->query("SELECT id, img, nomCarte, description_carte FROM Carte WHERE mots_clefs LIKE '%famille%' ORDER BY date_ajout DESC LIMIT $start, $count;");
+                }
+            }
+        } else if (!empty($_POST['decouverte'])) {
+            if ($compteur_de_filtres == 0) {
+                $reponse = $bdd->query("SELECT id, img, prix, nomCarte, description_carte FROM Carte WHERE mots_clefs LIKE '%decouverte%' LIMIT $start, $count;");
+                $nbr = $bdd->query("SELECT count(*) FROM Carte;");
+            } else if ($compteur_de_filtres == 1) {
+                $nbr = $bdd->query("SELECT count(*) FROM Carte;");
+                if (!empty($_POST['filtre'] == "prix_croissant")){
+                    $reponse = $bdd->query("SELECT id, img, nomCarte, description_carte FROM Carte WHERE mots_clefs LIKE '%decouverte%' ORDER BY prix DESC LIMIT $start, $count;");
+                }
+                if (!empty($_POST['filtre'] == "prix_decroissant")){
+                    $reponse = $bdd->query("SELECT id, img, nomCarte, description_carte FROM Carte WHERE mots_clefs LIKE '%decouverte%' ORDER BY prix ASC LIMIT $start, $count;");
+                }
+                if (!empty($_POST['filtre'] == "recent")){
+                    $reponse = $bdd->query("SELECT id, img, nomCarte, description_carte FROM Carte WHERE mots_clefs LIKE '%decouverte%' ORDER BY date_ajout ASC LIMIT $start, $count;");
+                }
+                if (!empty($_POST['filtre'] == "ancien")){
+                    $reponse = $bdd->query("SELECT id, img, nomCarte, description_carte FROM Carte WHERE mots_clefs LIKE '%decouverte%' ORDER BY date_ajout DESC LIMIT $start, $count;");
+                }
+            }
+        }
     
+        $donnees = $reponse->fetch();
     ?>
 
 
@@ -170,21 +251,22 @@ $img_4 = $reponse_carroussel['img'];
                     <h3 id="titre_filtre">
                         FILTRES
                     </h3>
-                    
-                    
-                        <input type="radio" name="filtre" id="prix_croissant" value="prix_croissant" <?php if (!empty($_POST['prix_croissant'])) { ?> checked <?php } ?>>
-                        <label for="prix_croissant">Prix Croissant</label><br>
+                    <input type="radio" name="filtre" id="prix_croissant" value="prix_croissant" <?php if (!empty($_POST['filtre']) && $_POST['filtre'] == "prix_croissant"){ ?> checked <?php } ?>>
+                    <label for="prix_croissant">Prix Croissant</label><br>
 
-                        <input type="radio" name="filtre" id="prix_decroissant" value="prix_decroissant" <?php if (!empty($_POST['prix_decroissant'])) { ?> checked <?php } ?>>
-                        <label for="prix_decroissant">Prix Décroissant</label><br>
+                    <input type="radio" name="filtre" id="prix_decroissant" value="prix_decroissant" <?php if (!empty($_POST['filtre']) && $_POST['filtre'] == "prix_decroissant"){ ?> checked <?php } ?>>
+                    <label for="prix_decroissant">Prix Décroissant</label><br>
 
-                        <input type="radio" name="filtre" id="recent" value="recent" <?php if (!empty($_POST['recent'])) { ?> checked <?php } ?>>
-                        <label for="recent">Récent</label><br>
+                    <input type="radio" name="filtre" id="recent" value="recent" <?php if (!empty($_POST['filtre']) && $_POST['filtre'] == "recent"){ ?> checked <?php } ?>>
+                    <label for="recent">Récent</label><br>
 
-                        <input type="radio" name="filtre" id="ancien" value="ancien" <?php if (!empty($_POST['ancien'])) { ?> checked <?php } ?>>
-                        <label for="ancien">Ancien</label><br>
+                    <input type="radio" name="filtre" id="ancien" value="ancien" <?php if (!empty($_POST['filtre']) && $_POST['filtre'] == "ancien"){ ?> checked <?php } ?>>
+                    <label for="ancien">Ancien</label><br>
 
-                        <input type="submit" id="appliquer" value="Appliquer" class="filtreSubmit">
+                    <input type="radio" name="filtre" id="aucun" value="aucun" <?php if (empty($_POST['filtre']) || $_POST['filtre'] == "aucun"){ ?> checked <?php } ?>>
+                    <label for="aucun">Aucun</label><br>
+
+                    <input type="submit" id="appliquer" value="Appliquer" class="filtreSubmit">
                 
                 </form>
             </div>
