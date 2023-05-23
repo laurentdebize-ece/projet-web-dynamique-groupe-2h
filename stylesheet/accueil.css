@@ -63,24 +63,6 @@ body {
     right: 0;
 }
 
-.arrow-button {
-    position: relative;
-    width: 50px;
-    height: 50px;
-    background-color: #171717;
-    border-radius: 25px;
-}
-
-.arrow-button::after {
-    position: absolute;
-    bottom: 50%;
-    width: 40%;
-    content: "";
-    display: block;
-    border-top: 3px solid #F8F1F1;
-    border-right: 3px solid #F8F1F1;
-}
-
 @media screen and (max-width: 1024px) {
     .actu-container {
         flex-direction: column;

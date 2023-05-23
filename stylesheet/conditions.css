@@ -1,0 +1,9 @@
+.main {
+    margin: auto;
+    padding: 50px 20%;
+}
+
+.main p {
+    padding: 20px 0;
+    text-align: justify;
+}

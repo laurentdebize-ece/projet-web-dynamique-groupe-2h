@@ -1,0 +1,23 @@
+.moving-image {
+    position: absolute;
+    pointer-events: none;
+    width: 40px;
+  }
+
+.bla_bla_bla_bla_cookies {
+    margin: auto;
+    padding: 50px 20%;
+  }
+
+.bla_bla_bla_bla_cookies p {
+    padding: 20px 0;
+    text-align: justify;
+}
+
+#titre_cookies {
+  padding: 25px;
+}
+
+.texte_a_indenter {
+    text-indent: 20px;
+}
