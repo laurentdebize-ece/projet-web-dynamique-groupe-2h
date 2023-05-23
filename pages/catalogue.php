@@ -468,8 +468,6 @@ $donnees = $reponse->fetch();
 
 
 <?php include('footer.php') ?>
-<script src="../javascript/menu.js"></script>
-<script src="../javascript/catalogue.js"></script>
 
 </body>
 
