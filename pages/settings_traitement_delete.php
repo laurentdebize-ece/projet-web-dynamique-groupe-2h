@@ -8,7 +8,7 @@
         $reponse = $bdd->prepare("DELETE FROM Users WHERE email = ? AND statut='2'");
         $reponse->execute([$email_part]);
 
-        echo "<script>window.location.assign('http://localhost:8888/projet-web-dynamique-groupe-2h/pages/compte.php');</script>";
+        echo "<script>window.location.assign('compte.php');</script>";
 
     }
 
@@ -19,7 +19,7 @@
         $reponse = $bdd->prepare("DELETE FROM Domaine WHERE nomDomaine = ?");
         $reponse->execute([$dom_delete]);
 
-        echo "<script>window.location.assign('http://localhost:8888/projet-web-dynamique-groupe-2h/pages/compte.php');</script>";
+        echo "<script>window.location.assign('compte.php');</script>";
 
     }
 

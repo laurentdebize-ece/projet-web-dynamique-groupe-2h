@@ -32,7 +32,7 @@
 
         $reponse->closeCursor();
         ?>
-        <script>window.location.assign('http://localhost:8888/projet-web-dynamique-groupe-2h/pages/compte.php');</script>";
+        <script>window.location.assign('compte.php');</script>";
         <?php
     } else {
         echo "<p>Erreur vous n'avez pas de saisie de champ correct</p>";

@@ -33,12 +33,12 @@
 
             
                         //Redirection du client à l'accueil ou de l'admin à l'accueil
-                        echo "<script>window.location.assign('http://localhost:8888/projet-web-dynamique-groupe-2h/pages/accueil.php');</script>";
+                        echo "<script>window.location.assign('accueil.php');</script>";
 
                     } else {
                         //Faire passer la chaine en methode GET pour gerer la recherche dans la base de donnée 
                         $chaine = $_POST['identifiant'];
-                        $url = "http://localhost:8888/projet-web-dynamique-groupe-2h/pages/login_partenaire.php?chaine=" . urlencode($chaine);
+                        $url = "login_partenaire.php?chaine=" . urlencode($chaine);
                         header("Location: " . $url);
                         echo "<script>window.location.assign('$url');</script>";
                     }
@@ -73,7 +73,7 @@
                         }
                     }
                     //Acces à la page suivante
-                    echo "<script>window.location.assign('http://localhost:8888/projet-web-dynamique-groupe-2h/pages/accueil.php');</script>";
+                    echo "<script>window.location.assign('accueil.php');</script>";
                 }
             }
 

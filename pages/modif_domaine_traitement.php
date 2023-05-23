@@ -24,11 +24,11 @@
         $reponse = $bdd->prepare("UPDATE Domaine SET nomDomaine = ? WHERE id = ?");
         $reponse->execute([$nom, htmlspecialchars($_POST['id_domaine'])]);
 
-        echo "<script>window.location.assign('http://localhost:8888/projet-web-dynamique-groupe-2h/pages/compte.php');</script>";
+        echo "<script>window.location.assign('compte.php');</script>";
         
     }
     else{
-        echo "<script>window.location.assign('http://localhost:8888/projet-web-dynamique-groupe-2h/pages/compte.php');</script>";
+        echo "<script>window.location.assign('compte.php');</script>";
     }
     }
 

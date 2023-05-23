@@ -30,7 +30,7 @@
         
         $reponse->closeCursor();
 
-        echo "<script>window.location.assign('http://localhost:8888/projet-web-dynamique-groupe-2h/pages/accueil.php');</script>";
+        echo "<script>window.location.assign('accueil.php');</script>";
 
     }else{
         echo"<p>Erreur 404</p>";
