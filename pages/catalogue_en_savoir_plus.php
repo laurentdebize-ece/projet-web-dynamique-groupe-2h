@@ -22,9 +22,11 @@ if(isset($_GET['id'])){
 $requete = $bdd->prepare("SELECT id, img, prix, nomCarte, description_carte, partenaire FROM Carte WHERE id=?");
 $requete->execute([$id]);
 $donnees = $requete->fetch();
+$partenaire = $donnees['partenaire'];
 
-$requete2 = $bdd->prepare("SELECT prenom FROM Users where partenaire =?");
-$requete2->execute($donnees['partenaire']);
+$requete2 = $bdd->prepare("SELECT prenom FROM Users where id =?");
+
+$requete2->execute(['$partenaire']);
 $donnees2 = $requete2->fetch();
 
 ?>
